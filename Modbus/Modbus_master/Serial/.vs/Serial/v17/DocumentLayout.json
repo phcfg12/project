@@ -1,0 +1,53 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Nam3\\hk2\\IOT\\B_tap\\Bai3_2\\Modbus\\Serial\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{D939B763-E6FF-4CFC-9D8B-EE9AC59A0AD2}|Serial\\Serial.csproj|D:\\Nam3\\hk2\\IOT\\B_tap\\Bai3_2\\Modbus\\Serial\\serial\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{D939B763-E6FF-4CFC-9D8B-EE9AC59A0AD2}|Serial\\Serial.csproj|solutionrelative:serial\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D939B763-E6FF-4CFC-9D8B-EE9AC59A0AD2}|Serial\\Serial.csproj|d:\\nam3\\hk2\\iot\\b_tap\\bai3_2\\modbus\\serial\\serial\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D939B763-E6FF-4CFC-9D8B-EE9AC59A0AD2}|Serial\\Serial.csproj|solutionrelative:serial\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "D:\\Nam3\\hk2\\IOT\\B_tap\\Bai3_2\\Modbus\\Serial\\Serial\\Form1.cs",
+              "RelativeDocumentMoniker": "Serial\\Form1.cs",
+              "ToolTip": "D:\\Nam3\\hk2\\IOT\\B_tap\\Bai3_2\\Modbus\\Serial\\Serial\\Form1.cs",
+              "RelativeToolTip": "Serial\\Form1.cs",
+              "ViewState": "AQIAAAwBAAAAAAAAAAAawBIBAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-11T08:27:54.257Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Form1.cs [Design]",
+              "DocumentMoniker": "D:\\Nam3\\hk2\\IOT\\B_tap\\Bai3_2\\Modbus\\Serial\\Serial\\Form1.cs",
+              "RelativeDocumentMoniker": "Serial\\Form1.cs",
+              "ToolTip": "D:\\Nam3\\hk2\\IOT\\B_tap\\Bai3_2\\Modbus\\Serial\\Serial\\Form1.cs [Design]",
+              "RelativeToolTip": "Serial\\Form1.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-11T08:27:54.569Z",
+              "EditorCaption": " [Design]"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

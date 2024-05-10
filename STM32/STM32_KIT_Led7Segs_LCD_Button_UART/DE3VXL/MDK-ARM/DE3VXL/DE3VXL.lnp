@@ -1,0 +1,25 @@
+--cpu Cortex-M3
+"de3vxl\startup_stm32f103xe.o"
+"de3vxl\lcd.o"
+"de3vxl\main.o"
+"de3vxl\stm32f1xx_it.o"
+"de3vxl\stm32f1xx_hal_msp.o"
+"de3vxl\stm32f1xx_hal_gpio_ex.o"
+"de3vxl\stm32f1xx_hal_tim.o"
+"de3vxl\stm32f1xx_hal_tim_ex.o"
+"de3vxl\stm32f1xx_hal.o"
+"de3vxl\stm32f1xx_hal_rcc.o"
+"de3vxl\stm32f1xx_hal_rcc_ex.o"
+"de3vxl\stm32f1xx_hal_gpio.o"
+"de3vxl\stm32f1xx_hal_dma.o"
+"de3vxl\stm32f1xx_hal_cortex.o"
+"de3vxl\stm32f1xx_hal_pwr.o"
+"de3vxl\stm32f1xx_hal_flash.o"
+"de3vxl\stm32f1xx_hal_flash_ex.o"
+"de3vxl\stm32f1xx_hal_exti.o"
+"de3vxl\stm32f1xx_hal_uart.o"
+"de3vxl\system_stm32f1xx.o"
+--strict --scatter "DE3VXL\DE3VXL.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "DE3VXL.map" -o DE3VXL\DE3VXL.axf

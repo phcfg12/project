@@ -1,0 +1,109 @@
+D:\Nam3\hk2\IOT\B_tập\Serial\Serial\bin\Debug\Serial.exe.config
+D:\Nam3\hk2\IOT\B_tập\Serial\Serial\bin\Debug\Serial.exe
+D:\Nam3\hk2\IOT\B_tập\Serial\Serial\bin\Debug\Serial.pdb
+D:\Nam3\hk2\IOT\B_tập\Serial\Serial\obj\Debug\Serial.csproj.AssemblyReference.cache
+D:\Nam3\hk2\IOT\B_tập\Serial\Serial\obj\Debug\Serial.Form1.resources
+D:\Nam3\hk2\IOT\B_tập\Serial\Serial\obj\Debug\Serial.Properties.Resources.resources
+D:\Nam3\hk2\IOT\B_tập\Serial\Serial\obj\Debug\Serial.csproj.GenerateResource.cache
+D:\Nam3\hk2\IOT\B_tập\Serial\Serial\obj\Debug\Serial.csproj.CoreCompileInputs.cache
+D:\Nam3\hk2\IOT\B_tập\Serial\Serial\obj\Debug\Serial.exe
+D:\Nam3\hk2\IOT\B_tập\Serial\Serial\obj\Debug\Serial.pdb
+D:\Nam3\hk2\IOT\B_tap\Bai3\Modbus\Serial\Serial\obj\Debug\Serial.csproj.AssemblyReference.cache
+D:\Nam3\hk2\IOT\B_tap\Bai3\Modbus\Serial\Serial\obj\Debug\Serial.Form1.resources
+D:\Nam3\hk2\IOT\B_tap\Bai3\Modbus\Serial\Serial\obj\Debug\Serial.Properties.Resources.resources
+D:\Nam3\hk2\IOT\B_tap\Bai3\Modbus\Serial\Serial\obj\Debug\Serial.csproj.GenerateResource.cache
+D:\Nam3\hk2\IOT\B_tap\Bai3\Modbus\Serial\Serial\obj\Debug\Serial.csproj.CoreCompileInputs.cache
+D:\Nam3\hk2\IOT\B_tap\Bai3\Modbus\Serial\Serial\obj\Debug\Serial.exe
+D:\Nam3\hk2\IOT\B_tap\Bai3\Modbus\Serial\Serial\obj\Debug\Serial.pdb
+D:\Nam3\hk2\IOT\B_tap\Bai3\Modbus\Serial\Serial\bin\Debug\Serial.exe.config
+D:\Nam3\hk2\IOT\B_tap\Bai3\Modbus\Serial\Serial\bin\Debug\Serial.exe
+D:\Nam3\hk2\IOT\B_tap\Bai3\Modbus\Serial\Serial\bin\Debug\Serial.pdb
+D:\Nam3\hk2\IOT\B_tap\Bai3\Modbus\Serial\Serial\bin\Debug\AMWD.Modbus.Common.dll
+D:\Nam3\hk2\IOT\B_tap\Bai3\Modbus\Serial\Serial\bin\Debug\AMWD.Modbus.Serial.dll
+D:\Nam3\hk2\IOT\B_tap\Bai3\Modbus\Serial\Serial\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\Nam3\hk2\IOT\B_tap\Bai3\Modbus\Serial\Serial\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+D:\Nam3\hk2\IOT\B_tap\Bai3\Modbus\Serial\Serial\bin\Debug\Microsoft.Extensions.Logging.dll
+D:\Nam3\hk2\IOT\B_tap\Bai3\Modbus\Serial\Serial\bin\Debug\Microsoft.Extensions.Options.dll
+D:\Nam3\hk2\IOT\B_tap\Bai3\Modbus\Serial\Serial\bin\Debug\Microsoft.Extensions.Primitives.dll
+D:\Nam3\hk2\IOT\B_tap\Bai3\Modbus\Serial\Serial\bin\Debug\Newtonsoft.Json.dll
+D:\Nam3\hk2\IOT\B_tap\Bai3\Modbus\Serial\Serial\bin\Debug\NModbus.dll
+D:\Nam3\hk2\IOT\B_tap\Bai3\Modbus\Serial\Serial\bin\Debug\System.IO.Ports.dll
+D:\Nam3\hk2\IOT\B_tap\Bai3\Modbus\Serial\Serial\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\Nam3\hk2\IOT\B_tap\Bai3\Modbus\Serial\Serial\bin\Debug\AMWD.Modbus.Common.xml
+D:\Nam3\hk2\IOT\B_tap\Bai3\Modbus\Serial\Serial\bin\Debug\AMWD.Modbus.Serial.xml
+D:\Nam3\hk2\IOT\B_tap\Bai3\Modbus\Serial\Serial\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+D:\Nam3\hk2\IOT\B_tap\Bai3\Modbus\Serial\Serial\bin\Debug\Microsoft.Extensions.Logging.xml
+D:\Nam3\hk2\IOT\B_tap\Bai3\Modbus\Serial\Serial\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+D:\Nam3\hk2\IOT\B_tap\Bai3\Modbus\Serial\Serial\bin\Debug\Microsoft.Extensions.Options.xml
+D:\Nam3\hk2\IOT\B_tap\Bai3\Modbus\Serial\Serial\bin\Debug\Microsoft.Extensions.Primitives.xml
+D:\Nam3\hk2\IOT\B_tap\Bai3\Modbus\Serial\Serial\bin\Debug\Newtonsoft.Json.xml
+D:\Nam3\hk2\IOT\B_tap\Bai3\Modbus\Serial\Serial\bin\Debug\NModbus.xml
+D:\Nam3\hk2\IOT\B_tap\Bai3\Modbus\Serial\Serial\bin\Debug\System.IO.Ports.xml
+D:\Nam3\hk2\IOT\B_tap\Bai3\Modbus\Serial\Serial\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\Nam3\hk2\IOT\B_tap\Bai3\Modbus\Serial\Serial\obj\Debug\Serial.csproj.Up2Date
+D:\Nam3\hk2\IOT\B_tap\Bai3 - Copy\Modbus\Serial\Serial\bin\Debug\Serial.exe.config
+D:\Nam3\hk2\IOT\B_tap\Bai3 - Copy\Modbus\Serial\Serial\bin\Debug\Serial.exe
+D:\Nam3\hk2\IOT\B_tap\Bai3 - Copy\Modbus\Serial\Serial\bin\Debug\Serial.pdb
+D:\Nam3\hk2\IOT\B_tap\Bai3 - Copy\Modbus\Serial\Serial\bin\Debug\AMWD.Modbus.Common.dll
+D:\Nam3\hk2\IOT\B_tap\Bai3 - Copy\Modbus\Serial\Serial\bin\Debug\AMWD.Modbus.Serial.dll
+D:\Nam3\hk2\IOT\B_tap\Bai3 - Copy\Modbus\Serial\Serial\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\Nam3\hk2\IOT\B_tap\Bai3 - Copy\Modbus\Serial\Serial\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+D:\Nam3\hk2\IOT\B_tap\Bai3 - Copy\Modbus\Serial\Serial\bin\Debug\Microsoft.Extensions.Logging.dll
+D:\Nam3\hk2\IOT\B_tap\Bai3 - Copy\Modbus\Serial\Serial\bin\Debug\Microsoft.Extensions.Options.dll
+D:\Nam3\hk2\IOT\B_tap\Bai3 - Copy\Modbus\Serial\Serial\bin\Debug\Microsoft.Extensions.Primitives.dll
+D:\Nam3\hk2\IOT\B_tap\Bai3 - Copy\Modbus\Serial\Serial\bin\Debug\Newtonsoft.Json.dll
+D:\Nam3\hk2\IOT\B_tap\Bai3 - Copy\Modbus\Serial\Serial\bin\Debug\NModbus.dll
+D:\Nam3\hk2\IOT\B_tap\Bai3 - Copy\Modbus\Serial\Serial\bin\Debug\System.IO.Ports.dll
+D:\Nam3\hk2\IOT\B_tap\Bai3 - Copy\Modbus\Serial\Serial\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\Nam3\hk2\IOT\B_tap\Bai3 - Copy\Modbus\Serial\Serial\bin\Debug\AMWD.Modbus.Common.xml
+D:\Nam3\hk2\IOT\B_tap\Bai3 - Copy\Modbus\Serial\Serial\bin\Debug\AMWD.Modbus.Serial.xml
+D:\Nam3\hk2\IOT\B_tap\Bai3 - Copy\Modbus\Serial\Serial\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+D:\Nam3\hk2\IOT\B_tap\Bai3 - Copy\Modbus\Serial\Serial\bin\Debug\Microsoft.Extensions.Logging.xml
+D:\Nam3\hk2\IOT\B_tap\Bai3 - Copy\Modbus\Serial\Serial\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+D:\Nam3\hk2\IOT\B_tap\Bai3 - Copy\Modbus\Serial\Serial\bin\Debug\Microsoft.Extensions.Options.xml
+D:\Nam3\hk2\IOT\B_tap\Bai3 - Copy\Modbus\Serial\Serial\bin\Debug\Microsoft.Extensions.Primitives.xml
+D:\Nam3\hk2\IOT\B_tap\Bai3 - Copy\Modbus\Serial\Serial\bin\Debug\Newtonsoft.Json.xml
+D:\Nam3\hk2\IOT\B_tap\Bai3 - Copy\Modbus\Serial\Serial\bin\Debug\NModbus.xml
+D:\Nam3\hk2\IOT\B_tap\Bai3 - Copy\Modbus\Serial\Serial\bin\Debug\System.IO.Ports.xml
+D:\Nam3\hk2\IOT\B_tap\Bai3 - Copy\Modbus\Serial\Serial\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\Nam3\hk2\IOT\B_tap\Bai3 - Copy\Modbus\Serial\Serial\obj\Debug\Serial.csproj.AssemblyReference.cache
+D:\Nam3\hk2\IOT\B_tap\Bai3 - Copy\Modbus\Serial\Serial\obj\Debug\Serial.Form1.resources
+D:\Nam3\hk2\IOT\B_tap\Bai3 - Copy\Modbus\Serial\Serial\obj\Debug\Serial.Properties.Resources.resources
+D:\Nam3\hk2\IOT\B_tap\Bai3 - Copy\Modbus\Serial\Serial\obj\Debug\Serial.csproj.GenerateResource.cache
+D:\Nam3\hk2\IOT\B_tap\Bai3 - Copy\Modbus\Serial\Serial\obj\Debug\Serial.csproj.CoreCompileInputs.cache
+D:\Nam3\hk2\IOT\B_tap\Bai3 - Copy\Modbus\Serial\Serial\obj\Debug\Serial.csproj.Up2Date
+D:\Nam3\hk2\IOT\B_tap\Bai3 - Copy\Modbus\Serial\Serial\obj\Debug\Serial.exe
+D:\Nam3\hk2\IOT\B_tap\Bai3 - Copy\Modbus\Serial\Serial\obj\Debug\Serial.pdb
+D:\Nam3\hk2\IOT\B_tap\Bai3_2\Modbus\Serial\Serial\bin\Debug\Serial.exe.config
+D:\Nam3\hk2\IOT\B_tap\Bai3_2\Modbus\Serial\Serial\bin\Debug\Serial.exe
+D:\Nam3\hk2\IOT\B_tap\Bai3_2\Modbus\Serial\Serial\bin\Debug\Serial.pdb
+D:\Nam3\hk2\IOT\B_tap\Bai3_2\Modbus\Serial\Serial\bin\Debug\AMWD.Modbus.Common.dll
+D:\Nam3\hk2\IOT\B_tap\Bai3_2\Modbus\Serial\Serial\bin\Debug\AMWD.Modbus.Serial.dll
+D:\Nam3\hk2\IOT\B_tap\Bai3_2\Modbus\Serial\Serial\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+D:\Nam3\hk2\IOT\B_tap\Bai3_2\Modbus\Serial\Serial\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+D:\Nam3\hk2\IOT\B_tap\Bai3_2\Modbus\Serial\Serial\bin\Debug\Microsoft.Extensions.Logging.dll
+D:\Nam3\hk2\IOT\B_tap\Bai3_2\Modbus\Serial\Serial\bin\Debug\Microsoft.Extensions.Options.dll
+D:\Nam3\hk2\IOT\B_tap\Bai3_2\Modbus\Serial\Serial\bin\Debug\Microsoft.Extensions.Primitives.dll
+D:\Nam3\hk2\IOT\B_tap\Bai3_2\Modbus\Serial\Serial\bin\Debug\Newtonsoft.Json.dll
+D:\Nam3\hk2\IOT\B_tap\Bai3_2\Modbus\Serial\Serial\bin\Debug\NModbus.dll
+D:\Nam3\hk2\IOT\B_tap\Bai3_2\Modbus\Serial\Serial\bin\Debug\System.IO.Ports.dll
+D:\Nam3\hk2\IOT\B_tap\Bai3_2\Modbus\Serial\Serial\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+D:\Nam3\hk2\IOT\B_tap\Bai3_2\Modbus\Serial\Serial\bin\Debug\AMWD.Modbus.Common.xml
+D:\Nam3\hk2\IOT\B_tap\Bai3_2\Modbus\Serial\Serial\bin\Debug\AMWD.Modbus.Serial.xml
+D:\Nam3\hk2\IOT\B_tap\Bai3_2\Modbus\Serial\Serial\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+D:\Nam3\hk2\IOT\B_tap\Bai3_2\Modbus\Serial\Serial\bin\Debug\Microsoft.Extensions.Logging.xml
+D:\Nam3\hk2\IOT\B_tap\Bai3_2\Modbus\Serial\Serial\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+D:\Nam3\hk2\IOT\B_tap\Bai3_2\Modbus\Serial\Serial\bin\Debug\Microsoft.Extensions.Options.xml
+D:\Nam3\hk2\IOT\B_tap\Bai3_2\Modbus\Serial\Serial\bin\Debug\Microsoft.Extensions.Primitives.xml
+D:\Nam3\hk2\IOT\B_tap\Bai3_2\Modbus\Serial\Serial\bin\Debug\Newtonsoft.Json.xml
+D:\Nam3\hk2\IOT\B_tap\Bai3_2\Modbus\Serial\Serial\bin\Debug\NModbus.xml
+D:\Nam3\hk2\IOT\B_tap\Bai3_2\Modbus\Serial\Serial\bin\Debug\System.IO.Ports.xml
+D:\Nam3\hk2\IOT\B_tap\Bai3_2\Modbus\Serial\Serial\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+D:\Nam3\hk2\IOT\B_tap\Bai3_2\Modbus\Serial\Serial\obj\Debug\Serial.csproj.AssemblyReference.cache
+D:\Nam3\hk2\IOT\B_tap\Bai3_2\Modbus\Serial\Serial\obj\Debug\Serial.Form1.resources
+D:\Nam3\hk2\IOT\B_tap\Bai3_2\Modbus\Serial\Serial\obj\Debug\Serial.Properties.Resources.resources
+D:\Nam3\hk2\IOT\B_tap\Bai3_2\Modbus\Serial\Serial\obj\Debug\Serial.csproj.GenerateResource.cache
+D:\Nam3\hk2\IOT\B_tap\Bai3_2\Modbus\Serial\Serial\obj\Debug\Serial.csproj.CoreCompileInputs.cache
+D:\Nam3\hk2\IOT\B_tap\Bai3_2\Modbus\Serial\Serial\obj\Debug\Serial.csproj.Up2Date
+D:\Nam3\hk2\IOT\B_tap\Bai3_2\Modbus\Serial\Serial\obj\Debug\Serial.exe
+D:\Nam3\hk2\IOT\B_tap\Bai3_2\Modbus\Serial\Serial\obj\Debug\Serial.pdb

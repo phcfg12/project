@@ -1,0 +1,1605 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AMWD.Modbus.Common</name>
+    </assembly>
+    <members>
+        <member name="T:AMWD.Modbus.Common.Consts">
+            <summary>
+            Contains all constants used in Modbus.
+            </summary>
+        </member>
+        <member name="F:AMWD.Modbus.Common.Consts.ErrorMask">
+            <summary>
+            The Bit-Mask to filter the error-state of a Modbus response.
+            </summary>
+        </member>
+        <member name="F:AMWD.Modbus.Common.Consts.MinDeviceIdTcp">
+            <summary>
+            The lowest accepted device id on TCP protocol.
+            </summary>
+        </member>
+        <member name="F:AMWD.Modbus.Common.Consts.MinDeviceIdRtu">
+            <summary>
+            The lowest accepted device id on RTU protocol.
+            </summary>
+        </member>
+        <member name="F:AMWD.Modbus.Common.Consts.MaxDeviceId">
+            <summary>
+            The highest accepted device id.
+            </summary>
+        </member>
+        <member name="F:AMWD.Modbus.Common.Consts.MinAddress">
+            <summary>
+            The lowest address.
+            </summary>
+        </member>
+        <member name="F:AMWD.Modbus.Common.Consts.MaxAddress">
+            <summary>
+            The highest address.
+            </summary>
+        </member>
+        <member name="F:AMWD.Modbus.Common.Consts.MinCount">
+            <summary>
+            The lowest number of requested data sets.
+            </summary>
+        </member>
+        <member name="F:AMWD.Modbus.Common.Consts.MaxCoilCountRead">
+            <summary>
+            The highest number of requested coils to read.
+            </summary>
+        </member>
+        <member name="F:AMWD.Modbus.Common.Consts.MaxCoilCountWrite">
+            <summary>
+            The highest number of requested coils to write.
+            </summary>
+        </member>
+        <member name="F:AMWD.Modbus.Common.Consts.MaxRegisterCountRead">
+            <summary>
+            The highest number of requested registers to read.
+            </summary>
+        </member>
+        <member name="F:AMWD.Modbus.Common.Consts.MaxRegisterCountWrite">
+            <summary>
+            The highest number of requested registers to write.
+            </summary>
+        </member>
+        <member name="T:AMWD.Modbus.Common.MessageType">
+            <summary>
+            Lists the Modbus request types.
+            </summary>
+        </member>
+        <member name="F:AMWD.Modbus.Common.MessageType.Unset">
+            <summary>
+            The type is not set.
+            </summary>
+        </member>
+        <member name="F:AMWD.Modbus.Common.MessageType.Read">
+            <summary>
+            The request reads data.
+            </summary>
+        </member>
+        <member name="F:AMWD.Modbus.Common.MessageType.WriteSingle">
+            <summary>
+            The request writes one data set.
+            </summary>
+        </member>
+        <member name="F:AMWD.Modbus.Common.MessageType.WriteMultiple">
+            <summary>
+            The request writes multiple data sets.
+            </summary>
+        </member>
+        <member name="T:AMWD.Modbus.Common.FunctionCode">
+            <summary>
+            Lists the Modbus function codes.
+            </summary>
+        </member>
+        <member name="F:AMWD.Modbus.Common.FunctionCode.ReadCoils">
+            <summary>
+            Read coils (Fn 1).
+            </summary>
+        </member>
+        <member name="F:AMWD.Modbus.Common.FunctionCode.ReadDiscreteInputs">
+            <summary>
+            Read discrete inputs (Fn 2).
+            </summary>
+        </member>
+        <member name="F:AMWD.Modbus.Common.FunctionCode.ReadHoldingRegisters">
+            <summary>
+            Reads holding registers (Fn 3).
+            </summary>
+        </member>
+        <member name="F:AMWD.Modbus.Common.FunctionCode.ReadInputRegisters">
+            <summary>
+            Reads input registers (Fn 4).
+            </summary>
+        </member>
+        <member name="F:AMWD.Modbus.Common.FunctionCode.WriteSingleCoil">
+            <summary>
+            Writes a single coil (Fn 5).
+            </summary>
+        </member>
+        <member name="F:AMWD.Modbus.Common.FunctionCode.WriteSingleRegister">
+            <summary>
+            Writes a single register (Fn 6).
+            </summary>
+        </member>
+        <member name="F:AMWD.Modbus.Common.FunctionCode.WriteMultipleCoils">
+            <summary>
+            Writes multiple coils (Fn 15).
+            </summary>
+        </member>
+        <member name="F:AMWD.Modbus.Common.FunctionCode.WriteMultipleRegisters">
+            <summary>
+            Writes multiple registers (Fn 16).
+            </summary>
+        </member>
+        <member name="F:AMWD.Modbus.Common.FunctionCode.EncapsulatedInterface">
+            <summary>
+            Tunnels service requests and method invocations (Fn 43).
+            </summary>
+            <remarks>
+            This function code needs additional information about its type of request.
+            </remarks>
+        </member>
+        <member name="T:AMWD.Modbus.Common.MEIType">
+            <summary>
+            Lists the possible MEI types.
+            </summary>
+            <remarks>
+            MEI = MODBUS Encapsulated Interface (Fn 43).
+            </remarks>
+        </member>
+        <member name="F:AMWD.Modbus.Common.MEIType.CANOpenGeneralReference">
+            <summary>
+            The request contains data of CANopen
+            </summary>
+        </member>
+        <member name="F:AMWD.Modbus.Common.MEIType.ReadDeviceInformation">
+            <summary>
+            The request contains data to read specific device information.
+            </summary>
+        </member>
+        <member name="T:AMWD.Modbus.Common.DeviceIDCategory">
+            <summary>
+            Lists the category of the device information.
+            </summary>
+        </member>
+        <member name="F:AMWD.Modbus.Common.DeviceIDCategory.Basic">
+            <summary>
+            Read the basic information (mandatory).
+            </summary>
+        </member>
+        <member name="F:AMWD.Modbus.Common.DeviceIDCategory.Regular">
+            <summary>
+            Read the regular information (optional).
+            </summary>
+        </member>
+        <member name="F:AMWD.Modbus.Common.DeviceIDCategory.Extended">
+            <summary>
+            Read the extended information (optional, requires multiple requests).
+            </summary>
+        </member>
+        <member name="F:AMWD.Modbus.Common.DeviceIDCategory.Individual">
+            <summary>
+            Read an individual object.
+            </summary>
+        </member>
+        <member name="T:AMWD.Modbus.Common.DeviceIDObject">
+            <summary>
+            List of known object ids of the device information.
+            </summary>
+        </member>
+        <member name="F:AMWD.Modbus.Common.DeviceIDObject.VendorName">
+            <summary>
+            The vendor name (mandatory).
+            </summary>
+        </member>
+        <member name="F:AMWD.Modbus.Common.DeviceIDObject.ProductCode">
+            <summary>
+            The product code (mandatory).
+            </summary>
+        </member>
+        <member name="F:AMWD.Modbus.Common.DeviceIDObject.MajorMinorRevision">
+            <summary>
+            The major and minor revision (mandatory).
+            </summary>
+        </member>
+        <member name="F:AMWD.Modbus.Common.DeviceIDObject.VendorUrl">
+            <summary>
+            The vendor url (optional).
+            </summary>
+        </member>
+        <member name="F:AMWD.Modbus.Common.DeviceIDObject.ProductName">
+            <summary>
+            The product name (optional).
+            </summary>
+        </member>
+        <member name="F:AMWD.Modbus.Common.DeviceIDObject.ModelName">
+            <summary>
+            The model name (optional).
+            </summary>
+        </member>
+        <member name="F:AMWD.Modbus.Common.DeviceIDObject.UserApplicationName">
+            <summary>
+            The application name (optional).
+            </summary>
+        </member>
+        <member name="T:AMWD.Modbus.Common.ErrorCode">
+            <summary>
+            Lists the Modbus exception codes.
+            </summary>
+        </member>
+        <member name="F:AMWD.Modbus.Common.ErrorCode.NoError">
+            <summary>
+            No error.
+            </summary>
+        </member>
+        <member name="F:AMWD.Modbus.Common.ErrorCode.IllegalFunction">
+            <summary>
+            Function code not valid/supported.
+            </summary>
+        </member>
+        <member name="F:AMWD.Modbus.Common.ErrorCode.IllegalDataAddress">
+            <summary>
+            Data address not in range.
+            </summary>
+        </member>
+        <member name="F:AMWD.Modbus.Common.ErrorCode.IllegalDataValue">
+            <summary>
+            The data value to set is not valid.
+            </summary>
+        </member>
+        <member name="F:AMWD.Modbus.Common.ErrorCode.SlaveDeviceFailure">
+            <summary>
+            Slave device produced a failure.
+            </summary>
+        </member>
+        <member name="F:AMWD.Modbus.Common.ErrorCode.Acknowledge">
+            <summary>
+            Ack
+            </summary>
+        </member>
+        <member name="F:AMWD.Modbus.Common.ErrorCode.SlaveDeviceBusy">
+            <summary>
+            Slave device is working on another task.
+            </summary>
+        </member>
+        <member name="F:AMWD.Modbus.Common.ErrorCode.NegativeAcknowledge">
+            <summary>
+            nAck
+            </summary>
+        </member>
+        <member name="F:AMWD.Modbus.Common.ErrorCode.MemoryParityError">
+            <summary>
+            Momory Parity Error.
+            </summary>
+        </member>
+        <member name="F:AMWD.Modbus.Common.ErrorCode.GatewayPath">
+            <summary>
+            Gateway of the device could not be reached.
+            </summary>
+        </member>
+        <member name="F:AMWD.Modbus.Common.ErrorCode.GatewayTargetDevice">
+            <summary>
+            Gateway device did no resopond.
+            </summary>
+        </member>
+        <member name="T:AMWD.Modbus.Common.ModbusObjectType">
+            <summary>
+            Defines the specific type.
+            </summary>
+        </member>
+        <member name="F:AMWD.Modbus.Common.ModbusObjectType.Unknown">
+            <summary>
+            The type is unknown (should not happen).
+            </summary>
+        </member>
+        <member name="F:AMWD.Modbus.Common.ModbusObjectType.Coil">
+            <summary>
+            The discrete value is a coil (read/write).
+            </summary>
+        </member>
+        <member name="F:AMWD.Modbus.Common.ModbusObjectType.DiscreteInput">
+            <summary>
+            The discrete value is an input (read only).
+            </summary>
+        </member>
+        <member name="F:AMWD.Modbus.Common.ModbusObjectType.HoldingRegister">
+            <summary>
+            The value is an holding register (read/write).
+            </summary>
+        </member>
+        <member name="F:AMWD.Modbus.Common.ModbusObjectType.InputRegister">
+            <summary>
+            The value is an input register (read only).
+            </summary>
+        </member>
+        <member name="T:AMWD.Modbus.Common.Interfaces.IModbusClient">
+            <summary>
+            Represents the interface for a Modbus client.
+            </summary>
+        </member>
+        <member name="P:AMWD.Modbus.Common.Interfaces.IModbusClient.ConnectingTask">
+            <summary>
+            Gets the result of the asynchronous initialization of this instance.
+            </summary>
+        </member>
+        <member name="P:AMWD.Modbus.Common.Interfaces.IModbusClient.IsConnected">
+            <summary>
+            Gets a value indicating whether the connection is established.
+            </summary>
+        </member>
+        <member name="P:AMWD.Modbus.Common.Interfaces.IModbusClient.ReconnectTimeSpan">
+            <summary>
+            Gets or sets the max reconnect timespan until the reconnect is aborted.
+            </summary>
+        </member>
+        <member name="P:AMWD.Modbus.Common.Interfaces.IModbusClient.SendTimeout">
+            <summary>
+            Gets or sets the send timeout in milliseconds. Default: 1000.
+            </summary>
+        </member>
+        <member name="P:AMWD.Modbus.Common.Interfaces.IModbusClient.ReceiveTimeout">
+            <summary>
+            Gets or sets the receive timeout in milliseconds. Default: 1000;
+            </summary>
+        </member>
+        <member name="P:AMWD.Modbus.Common.Interfaces.IModbusClient.DisableTransactionId">
+            <summary>
+            Gets or sets a value indicating whether to disable the transaction id check.  NOT RECOMMENDED
+            </summary>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Interfaces.IModbusClient.Connect(System.Threading.CancellationToken)">
+            <summary>
+            Connects the client to the server.
+            </summary>
+            <param name="cancellationToken">A cancellation token to abort the action.</param>
+            <returns>An awaitable task.</returns>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Interfaces.IModbusClient.Disconnect(System.Threading.CancellationToken)">
+            <summary>
+            Disconnects the client.
+            </summary>
+            <param name="cancellationToken">A cancellation token to abort the action.</param>
+            <returns>An awaitable task.</returns>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Interfaces.IModbusClient.ReadCoils(System.Byte,System.UInt16,System.UInt16,System.Threading.CancellationToken)">
+            <summary>
+            Reads one or more coils of a device. (Modbus function 1).
+            </summary>
+            <param name="deviceId">The id to address the device (slave).</param>
+            <param name="startAddress">The first coil number to read.</param>
+            <param name="count">The number of coils to read.</param>
+            <param name="cancellationToken">A cancellation token to abort the action.</param>
+            <returns>A list of coils or null on error.</returns>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Interfaces.IModbusClient.ReadDiscreteInputs(System.Byte,System.UInt16,System.UInt16,System.Threading.CancellationToken)">
+            <summary>
+            Reads one or more discrete inputs of a device. (Modbus function 2).
+            </summary>
+            <param name="deviceId">The id to address the device (slave).</param>
+            <param name="startAddress">The first discrete input number to read.</param>
+            <param name="count">The number of discrete inputs to read.</param>
+            <param name="cancellationToken">A cancellation token to abort the action.</param>
+            <returns>A list of discrete inputs or null on error.</returns>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Interfaces.IModbusClient.ReadHoldingRegisters(System.Byte,System.UInt16,System.UInt16,System.Threading.CancellationToken)">
+            <summary>
+            Reads one or more holding registers of a device. (Modbus function 3).
+            </summary>
+            <param name="deviceId">The id to address the device (slave).</param>
+            <param name="startAddress">The first register number to read.</param>
+            <param name="count">The number of registers to read.</param>
+            <param name="cancellationToken">A cancellation token to abort the action.</param>
+            <returns>A list of registers or null on error.</returns>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Interfaces.IModbusClient.ReadInputRegisters(System.Byte,System.UInt16,System.UInt16,System.Threading.CancellationToken)">
+            <summary>
+            Reads one or more input registers of a device. (Modbus function 4).
+            </summary>
+            <param name="deviceId">The id to address the device (slave).</param>
+            <param name="startAddress">The first register number to read.</param>
+            <param name="count">The number of registers to read.</param>
+            <param name="cancellationToken">A cancellation token to abort the action.</param>
+            <returns>A list of registers or null on error.</returns>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Interfaces.IModbusClient.ReadDeviceInformation(System.Byte,AMWD.Modbus.Common.DeviceIDCategory,AMWD.Modbus.Common.DeviceIDObject,System.Threading.CancellationToken)">
+            <summary>
+            Reads device information. (Modbus function 43).
+            </summary>
+            <param name="deviceId">The id to address the device (slave).</param>
+            <param name="categoryId">The category to read (basic, regular, extended, individual).</param>
+            <param name="objectId">The first object id to read.</param>
+            <param name="cancellationToken">A cancellation token to abort the action.</param>
+            <returns>A map of device information and their content as string.</returns>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Interfaces.IModbusClient.ReadDeviceInformationRaw(System.Byte,AMWD.Modbus.Common.DeviceIDCategory,AMWD.Modbus.Common.DeviceIDObject,System.Threading.CancellationToken)">
+            <summary>
+            Reads device information. (Modbus function 43).
+            </summary>
+            <param name="deviceId">The id to address the device (slave).</param>
+            <param name="categoryId">The category to read (basic, regular, extended, individual).</param>
+            <param name="objectId">The first object id to read.</param>
+            <param name="cancellationToken">A cancellation token to abort the action.</param>
+            <returns>A map of device information and their content as raw bytes.</returns>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Interfaces.IModbusClient.WriteSingleCoil(System.Byte,AMWD.Modbus.Common.Structures.ModbusObject,System.Threading.CancellationToken)">
+            <summary>
+            Writes a single coil status to the Modbus device. (Modbus function 5)
+            </summary>
+            <param name="deviceId">The id to address the device (slave).</param>
+            <param name="coil">The coil to write.</param>
+            <param name="cancellationToken">A cancellation token to abort the action.</param>
+            <returns>true on success, otherwise false.</returns>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Interfaces.IModbusClient.WriteSingleRegister(System.Byte,AMWD.Modbus.Common.Structures.ModbusObject,System.Threading.CancellationToken)">
+            <summary>
+            Writes a single holding register to the Modbus device. (Modbus function 6)
+            </summary>
+            <param name="deviceId">The id to address the device (slave).</param>
+            <param name="register">The register to write.</param>
+            <param name="cancellationToken">A cancellation token to abort the action.</param>
+            <returns>true on success, otherwise false.</returns>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Interfaces.IModbusClient.WriteCoils(System.Byte,System.Collections.Generic.IEnumerable{AMWD.Modbus.Common.Structures.ModbusObject},System.Threading.CancellationToken)">
+            <summary>
+            Writes multiple coil status to the Modbus device. (Modbus function 15)
+            </summary>
+            <param name="deviceId">The id to address the device (slave).</param>
+            <param name="coils">A list of coils to write.</param>
+            <param name="cancellationToken">A cancellation token to abort the action.</param>
+            <returns>true on success, otherwise false.</returns>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Interfaces.IModbusClient.WriteRegisters(System.Byte,System.Collections.Generic.IEnumerable{AMWD.Modbus.Common.Structures.ModbusObject},System.Threading.CancellationToken)">
+            <summary>
+            Writes multiple holding registers to the Modbus device. (Modbus function 16)
+            </summary>
+            <param name="deviceId">The id to address the device (slave).</param>
+            <param name="registers">A list of registers to write.</param>
+            <param name="cancellationToken">A cancellation token to abort the action.</param>
+            <returns>true on success, otherwise false.</returns>
+        </member>
+        <member name="T:AMWD.Modbus.Common.Interfaces.IModbusServer">
+            <summary>
+            Represents the interface of a Modbus server.
+            </summary>
+        </member>
+        <member name="E:AMWD.Modbus.Common.Interfaces.IModbusServer.InputWritten">
+            <summary>
+            Raised when a coil was written.
+            </summary>
+        </member>
+        <member name="E:AMWD.Modbus.Common.Interfaces.IModbusServer.RegisterWritten">
+            <summary>
+            Raised when a holding register was written.
+            </summary>
+        </member>
+        <member name="P:AMWD.Modbus.Common.Interfaces.IModbusServer.Initialization">
+            <summary>
+            Gets the result of the asynchronous initialization of this instance.
+            </summary>
+        </member>
+        <member name="P:AMWD.Modbus.Common.Interfaces.IModbusServer.StartTime">
+            <summary>
+            Gets the UTC timestamp of the server start.
+            </summary>
+        </member>
+        <member name="P:AMWD.Modbus.Common.Interfaces.IModbusServer.IsRunning">
+            <summary>
+            Gets a value indicating whether the server is running.
+            </summary>
+        </member>
+        <member name="P:AMWD.Modbus.Common.Interfaces.IModbusServer.Timeout">
+            <summary>
+            Gets or sets read/write timeout.
+            </summary>
+        </member>
+        <member name="P:AMWD.Modbus.Common.Interfaces.IModbusServer.DeviceIds">
+            <summary>
+            Gets a list of device ids the server handles.
+            </summary>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Interfaces.IModbusServer.GetCoil(System.Byte,System.UInt16)">
+            <summary>
+            Returns a coil of a device.
+            </summary>
+            <param name="deviceId">The device id.</param>
+            <param name="coilNumber">The address of the coil.</param>
+            <returns>The coil.</returns>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Interfaces.IModbusServer.SetCoil(System.Byte,System.UInt16,System.Boolean)">
+            <summary>
+            Sets the status of a coild to a device.
+            </summary>
+            <param name="deviceId">The device id.</param>
+            <param name="coilNumber">The address of the coil.</param>
+            <param name="value">The status of the coil.</param>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Interfaces.IModbusServer.SetCoil(System.Byte,AMWD.Modbus.Common.Structures.ModbusObject)">
+            <summary>
+            Sets the status of a coild to a device.
+            </summary>
+            <param name="deviceId">The device id.</param>
+            <param name="coil">The coil.</param>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Interfaces.IModbusServer.GetDiscreteInput(System.Byte,System.UInt16)">
+            <summary>
+            Returns a discrete input of a device.
+            </summary>
+            <param name="deviceId">The device id.</param>
+            <param name="inputNumber">The discrete input address.</param>
+            <returns>The discrete input.</returns>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Interfaces.IModbusServer.SetDiscreteInput(System.Byte,System.UInt16,System.Boolean)">
+            <summary>
+            Sets a discrete input of a device.
+            </summary>
+            <param name="deviceId">The device id.</param>
+            <param name="inputNumber">The discrete input address.</param>
+            <param name="value">A value inidcating whether the input is set.</param>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Interfaces.IModbusServer.SetDiscreteInput(System.Byte,AMWD.Modbus.Common.Structures.ModbusObject)">
+            <summary>
+            Sets a discrete input of a device.
+            </summary>
+            <param name="deviceId">The device id.</param>
+            <param name="discreteInput">The discrete input to set.</param>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Interfaces.IModbusServer.GetInputRegister(System.Byte,System.UInt16)">
+            <summary>
+            Returns an input register of a device.
+            </summary>
+            <param name="deviceId">The device id.</param>
+            <param name="registerNumber">The input register address.</param>
+            <returns>The input register.</returns>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Interfaces.IModbusServer.SetInputRegister(System.Byte,System.UInt16,System.UInt16)">
+            <summary>
+            Sets an input register of a device.
+            </summary>
+            <param name="deviceId">The device id.</param>
+            <param name="registerNumber">The input register address.</param>
+            <param name="value">The register value.</param>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Interfaces.IModbusServer.SetInputRegister(System.Byte,System.UInt16,System.Byte,System.Byte)">
+            <summary>
+            Sets an input register of a device.
+            </summary>
+            <param name="deviceId">The device id.</param>
+            <param name="registerNumber">The input register address.</param>
+            <param name="highByte">The High-Byte value.</param>
+            <param name="lowByte">The Low-Byte value.</param>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Interfaces.IModbusServer.SetInputRegister(System.Byte,AMWD.Modbus.Common.Structures.ModbusObject)">
+            <summary>
+            Sets an input register of a device.
+            </summary>
+            <param name="deviceId">The device id.</param>
+            <param name="register">The input register.</param>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Interfaces.IModbusServer.GetHoldingRegister(System.Byte,System.UInt16)">
+            <summary>
+            Returns a holding register of a device.
+            </summary>
+            <param name="deviceId">The device id.</param>
+            <param name="registerNumber">The holding register address.</param>
+            <returns>The holding register.</returns>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Interfaces.IModbusServer.SetHoldingRegister(System.Byte,System.UInt16,System.UInt16)">
+            <summary>
+            Sets a holding register of a device.
+            </summary>
+            <param name="deviceId">The device id.</param>
+            <param name="registerNumber">The holding register address.</param>
+            <param name="value">The register value.</param>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Interfaces.IModbusServer.SetHoldingRegister(System.Byte,System.UInt16,System.Byte,System.Byte)">
+            <summary>
+            Sets a holding register of a device.
+            </summary>
+            <param name="deviceId">The device id.</param>
+            <param name="registerNumber">The holding register address.</param>
+            <param name="highByte">The high byte value.</param>
+            <param name="lowByte">The low byte value.</param>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Interfaces.IModbusServer.SetHoldingRegister(System.Byte,AMWD.Modbus.Common.Structures.ModbusObject)">
+            <summary>
+            Sets a holding register of a device.
+            </summary>
+            <param name="deviceId">The device id.</param>
+            <param name="register">The register.</param>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Interfaces.IModbusServer.AddDevice(System.Byte)">
+            <summary>
+            Adds a new device to the server.
+            </summary>
+            <param name="deviceId">The id of the new device.</param>
+            <returns>true on success, otherwise false.</returns>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Interfaces.IModbusServer.RemoveDevice(System.Byte)">
+            <summary>
+            Removes a device from the server.
+            </summary>
+            <param name="deviceId">The device id to remove.</param>
+            <returns>true on success, otherwise false.</returns>
+        </member>
+        <member name="T:AMWD.Modbus.Common.Interfaces.WriteEventArgs">
+            <summary>
+            Provides information of the write action.
+            </summary>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Interfaces.WriteEventArgs.#ctor(System.Byte,AMWD.Modbus.Common.Structures.Coil)">
+            <summary>
+            Initializes a new instance of the <see cref="T:AMWD.Modbus.Common.Interfaces.WriteEventArgs"/> class using a single coil.
+            </summary>
+            <param name="deviceId">The device id.</param>
+            <param name="coil">The coil.</param>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Interfaces.WriteEventArgs.#ctor(System.Byte,System.Collections.Generic.List{AMWD.Modbus.Common.Structures.Coil})">
+            <summary>
+            Initializes a new instance of the <see cref="T:AMWD.Modbus.Common.Interfaces.WriteEventArgs"/> class using a list of coils.
+            </summary>
+            <param name="deviceId">The device id.</param>
+            <param name="coils">A list of coils.</param>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Interfaces.WriteEventArgs.#ctor(System.Byte,AMWD.Modbus.Common.Structures.Register)">
+            <summary>
+            Initializes a new instance of the <see cref="T:AMWD.Modbus.Common.Interfaces.WriteEventArgs"/> class using a single register.
+            </summary>
+            <param name="deviceId">The device id.</param>
+            <param name="register">The register.</param>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Interfaces.WriteEventArgs.#ctor(System.Byte,System.Collections.Generic.List{AMWD.Modbus.Common.Structures.Register})">
+            <summary>
+            Initializes a new instance of the <see cref="T:AMWD.Modbus.Common.Interfaces.WriteEventArgs"/> class using a list of registers.
+            </summary>
+            <param name="deviceId">The device id.</param>
+            <param name="registers">A list of registers.</param>
+        </member>
+        <member name="P:AMWD.Modbus.Common.Interfaces.WriteEventArgs.DeviceId">
+            <summary>
+            Gets the device id of the written values.
+            </summary>
+        </member>
+        <member name="P:AMWD.Modbus.Common.Interfaces.WriteEventArgs.Coils">
+            <summary>
+            Gets a list of written coils.
+            </summary>
+        </member>
+        <member name="P:AMWD.Modbus.Common.Interfaces.WriteEventArgs.Registers">
+            <summary>
+            Gets a list of written holding registers.
+            </summary>
+        </member>
+        <member name="T:AMWD.Modbus.Common.Structures.Coil">
+            <summary>
+            Represents the contents of a coil on a Modbus device.
+            </summary>
+        </member>
+        <member name="P:AMWD.Modbus.Common.Structures.Coil.Type">
+            <inheritdoc/>
+        </member>
+        <member name="T:AMWD.Modbus.Common.Structures.DiscreteInput">
+            <summary>
+            Represents the contents of a discrete input on a Modbus device.
+            </summary>
+        </member>
+        <member name="P:AMWD.Modbus.Common.Structures.DiscreteInput.Type">
+            <inheritdoc/>
+        </member>
+        <member name="T:AMWD.Modbus.Common.Structures.ModbusException">
+            <summary>
+            Represents errors that occurr during Modbus requests.
+            </summary>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Structures.ModbusException.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:AMWD.Modbus.Common.Structures.ModbusException"/> class.
+            </summary>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Structures.ModbusException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of the <see cref="T:AMWD.Modbus.Common.Structures.ModbusException"/> class
+            with a specified error message.
+            </summary>
+            <param name="message">The specified error message.</param>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Structures.ModbusException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of the <see cref="T:AMWD.Modbus.Common.Structures.ModbusException"/> class
+            with a specified error message and a reference to the inner exception that is the cause of this exception.
+            </summary>
+            <param name="message">The specified error message.</param>
+            <param name="innerException">The inner exception.</param>
+        </member>
+        <member name="P:AMWD.Modbus.Common.Structures.ModbusException.ErrorCode">
+            <summary>
+            Gets or sets the error/exception code.
+            </summary>
+        </member>
+        <member name="P:AMWD.Modbus.Common.Structures.ModbusException.ErrorMessage">
+            <summary>
+            Gets the error message.
+            </summary>
+        </member>
+        <member name="T:AMWD.Modbus.Common.Structures.ModbusObject">
+            <summary>
+            The abstract basis class for all types of modbus register.
+            </summary>
+        </member>
+        <member name="P:AMWD.Modbus.Common.Structures.ModbusObject.Type">
+            <summary>
+            Gets the explicit type.
+            </summary>
+        </member>
+        <member name="P:AMWD.Modbus.Common.Structures.ModbusObject.Address">
+            <summary>
+            Gets or sets the address.
+            </summary>
+        </member>
+        <member name="P:AMWD.Modbus.Common.Structures.ModbusObject.HiByte">
+            <summary>
+            Gets or sets the High-Byte of the register.
+            </summary>
+        </member>
+        <member name="P:AMWD.Modbus.Common.Structures.ModbusObject.LoByte">
+            <summary>
+            Gets or sets the Low-Byte of the register.
+            </summary>
+        </member>
+        <member name="P:AMWD.Modbus.Common.Structures.ModbusObject.RegisterValue">
+            <summary>
+            Gets or sets the value of the register as WORD.
+            </summary>
+        </member>
+        <member name="P:AMWD.Modbus.Common.Structures.ModbusObject.BoolValue">
+            <summary>
+            Gets or sets a value indicating whether the discrete value is set.
+            </summary>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Structures.ModbusObject.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Structures.ModbusObject.Equals(System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Structures.ModbusObject.GetHashCode">
+            <inheritdoc/>
+        </member>
+        <member name="T:AMWD.Modbus.Common.Structures.Register">
+            <summary>
+            Represents an holding register to keep the modbus typical naming.
+            </summary>
+            <remarks>
+            For programming use the abstract class <see cref="T:AMWD.Modbus.Common.Structures.ModbusObject"/>.
+            </remarks>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Structures.Register.Create(System.Byte,System.UInt16,System.Boolean)">
+            <summary>
+            Initializes a new register from a byte.
+            </summary>
+            <param name="value">The byte value.</param>
+            <param name="address">The register address.</param>
+            <param name="isInput">Flag to create an input register.</param>
+            <returns></returns>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Structures.Register.Create(System.UInt16,System.UInt16,System.Boolean)">
+            <summary>
+            Initializes a new register from a unsigned short.
+            </summary>
+            <param name="value">The uint16 value.</param>
+            <param name="address">The register address.</param>
+            <param name="isInput">Flag to create an input register.</param>
+            <returns></returns>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Structures.Register.Create(System.UInt32,System.UInt16,System.Boolean)">
+            <summary>
+            Initializes new registers from an unsigned int.
+            </summary>
+            <param name="value">The uint32 value.</param>
+            <param name="address">The register address.</param>
+            <param name="isInput">Flag to create an input register.</param>
+            <returns></returns>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Structures.Register.Create(System.UInt64,System.UInt16,System.Boolean)">
+            <summary>
+            Initializes new registers from an unsigned long.
+            </summary>
+            <param name="value">The uint64 value.</param>
+            <param name="address">The register address.</param>
+            <param name="isInput">Flag to create an input register.</param>
+            <returns></returns>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Structures.Register.Create(System.SByte,System.UInt16,System.Boolean)">
+            <summary>
+            Initializes a new register from a signed byte.
+            </summary>
+            <param name="value">The sbyte value.</param>
+            <param name="address">The register address.</param>
+            <param name="isInput">Flag to create an input register.</param>
+            <returns></returns>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Structures.Register.Create(System.Int16,System.UInt16,System.Boolean)">
+            <summary>
+            Initializes a new register from a short.
+            </summary>
+            <param name="value">The int16 value.</param>
+            <param name="address">The register address.</param>
+            <param name="isInput">Flag to create an input register.</param>
+            <returns></returns>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Structures.Register.Create(System.Int32,System.UInt16,System.Boolean)">
+            <summary>
+            Initializes new registers from an int.
+            </summary>
+            <param name="value">The int32 value.</param>
+            <param name="address">The register address.</param>
+            <param name="isInput">Flag to create an input register.</param>
+            <returns></returns>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Structures.Register.Create(System.Int64,System.UInt16,System.Boolean)">
+            <summary>
+            Initializes new registers from a long.
+            </summary>
+            <param name="value">The int64 value.</param>
+            <param name="address">The register address.</param>
+            <param name="isInput">Flag to create an input register.</param>
+            <returns></returns>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Structures.Register.Create(System.Single,System.UInt16,System.Boolean)">
+            <summary>
+            Initializes new registers from a float.
+            </summary>
+            <param name="value">The single value.</param>
+            <param name="address">The register address.</param>
+            <param name="isInput">Flag to create an input register.</param>
+            <returns></returns>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Structures.Register.Create(System.Double,System.UInt16,System.Boolean)">
+            <summary>
+            Initializes new registers from a double.
+            </summary>
+            <param name="value">The double value.</param>
+            <param name="address">The register address.</param>
+            <param name="isInput">Flag to create an input register.</param>
+            <returns></returns>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Structures.Register.Create(System.String,System.UInt16,System.Text.Encoding,System.Boolean)">
+            <summary>
+            Initializes new registers from a string.
+            </summary>
+            <param name="str">The string.</param>
+            <param name="address">The register address.</param>
+            <param name="encoding">The encoding of the string. Default: <see cref="P:System.Text.Encoding.UTF8"/>.</param>
+            <param name="isInput">Flag to create an input register.</param>
+            <returns></returns>
+        </member>
+        <member name="T:AMWD.Modbus.Common.Util.Checksum">
+            <summary>
+            Helper class for checksums.
+            </summary>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Util.Checksum.CRC16(System.Byte[])">
+            <summary>
+            Calculates the CRC checksum with 16 bits of an array.
+            </summary>
+            <param name="array">The array with data.</param>
+            <returns>CRC16 Checksum as byte array. [0] = low byte, [1] = high byte.</returns>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Util.Checksum.CRC16(System.Byte[],System.Int32,System.Int32)">
+            <summary>
+            Calculates the CRC checksum with 16 bits of an array.
+            </summary>
+            <param name="array">The array with data.</param>
+            <param name="start">The first byte to use.</param>
+            <param name="length">The number of bytes to use.</param>
+            <returns>CRC16 Checksum as byte array. [0] = low byte, [1] = high byte.</returns>
+        </member>
+        <member name="T:AMWD.Modbus.Common.Util.DataBuffer">
+            <summary>
+            Implements a more flexible handling of a byte array.
+            </summary>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Util.DataBuffer.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:AMWD.Modbus.Common.Util.DataBuffer"/> class.
+            </summary>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Util.DataBuffer.#ctor(System.Int32)">
+            <summary>
+            Initializes a new instance of the <see cref="T:AMWD.Modbus.Common.Util.DataBuffer"/> class with the buffer length given.
+            </summary>
+            <param name="byteCount">Length of the new buffer.</param>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Util.DataBuffer.#ctor(System.Collections.Generic.IEnumerable{System.Byte})">
+            <summary>
+            Initializes a new instance of the <see cref="T:AMWD.Modbus.Common.Util.DataBuffer"/> class using the bytes a existing buffer.
+            </summary>
+            <param name="bytes">New buffer as byte array.</param>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Util.DataBuffer.#ctor(AMWD.Modbus.Common.Util.DataBuffer)">
+            <summary>
+            Initializes a new instance of the <see cref="T:AMWD.Modbus.Common.Util.DataBuffer"/> class as copy of an existing one.
+            </summary>
+            <param name="buffer">The DataBuffer to copy.</param>
+        </member>
+        <member name="P:AMWD.Modbus.Common.Util.DataBuffer.Buffer">
+            <summary>
+            Gets the buffer as byte array.
+            </summary>
+        </member>
+        <member name="P:AMWD.Modbus.Common.Util.DataBuffer.Length">
+            <summary>
+            Gets the length of the buffer.
+            </summary>
+        </member>
+        <member name="P:AMWD.Modbus.Common.Util.DataBuffer.IsLittleEndian">
+            <summary>
+            Gets or sets a value that indicates whether the values are stored little- or bigendian.
+            </summary>
+        </member>
+        <member name="P:AMWD.Modbus.Common.Util.DataBuffer.Item(System.Int32)">
+            <summary>
+            Gets or sets a byte at the index.
+            </summary>
+            <param name="index">The index to read/write the byte.</param>
+            <returns>The value.</returns>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Util.DataBuffer.SetBytes(System.Int32,System.Byte[])">
+            <summary>
+            Sets the bytes at the specified position.
+            </summary>
+            <param name="index">The index to start with the bytes.</param>
+            <param name="bytes">The bytes to set.</param>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Util.DataBuffer.SetBytes(System.Int32,AMWD.Modbus.Common.Util.DataBuffer)">
+            <summary>
+            Sets the bytes at the specified position.
+            </summary>
+            <param name="index">The index to start with the bytes.</param>
+            <param name="block">The DataBlock for the bytes.</param>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Util.DataBuffer.SetByte(System.Int32,System.Byte)">
+            <summary>
+            Sets a byte at the specified position.
+            </summary>
+            <param name="index">The index.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Util.DataBuffer.SetBoolean(System.Int32,System.Boolean)">
+            <summary>
+            Sets a boolean at the specific position.
+            </summary>
+            <param name="index">The index.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Util.DataBuffer.SetUInt16(System.Int32,System.UInt16)">
+            <summary>
+            Sets a unsigned short at the specified position.
+            </summary>
+            <param name="index">The index.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Util.DataBuffer.SetUInt32(System.Int32,System.UInt32)">
+            <summary>
+            Sets an unsigned int at the specified position.
+            </summary>
+            <param name="index">The index.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Util.DataBuffer.SetUInt64(System.Int32,System.UInt64)">
+            <summary>
+            Sets a unsigned long at the specified position.
+            </summary>
+            <param name="index">The index.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Util.DataBuffer.SetSByte(System.Int32,System.SByte)">
+            <summary>
+            Sets an sbyte at the specified position.
+            </summary>
+            <param name="index">The index.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Util.DataBuffer.SetInt16(System.Int32,System.Int16)">
+            <summary>
+            Sets a short at the specified position.
+            </summary>
+            <param name="index">The index.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Util.DataBuffer.SetInt32(System.Int32,System.Int32)">
+            <summary>
+            Sets an int at the specified position.
+            </summary>
+            <param name="index">The index.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Util.DataBuffer.SetInt64(System.Int32,System.Int64)">
+            <summary>
+            Sets a long at the specified position.
+            </summary>
+            <param name="index">The index.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Util.DataBuffer.SetSingle(System.Int32,System.Single)">
+            <summary>
+            Sets a float at the specified position.
+            </summary>
+            <param name="index">The index.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Util.DataBuffer.SetDouble(System.Int32,System.Double)">
+            <summary>
+            Sets a double at the specified position.
+            </summary>
+            <param name="index">The index.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Util.DataBuffer.SetTimeSpan(System.Int32,System.TimeSpan)">
+            <summary>
+            Sets a timespan (long) at the specified position.
+            </summary>
+            <param name="index">The index.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Util.DataBuffer.SetDateTime(System.Int32,System.DateTime,System.Boolean)">
+            <summary>
+            Sets a timestamp (DateTime => TimeSpan) at the specified position.
+            </summary>
+            <param name="index">The index.</param>
+            <param name="value">The value.</param>
+            <param name="localTime">A value indicating whether the given value is in local time.</param>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Util.DataBuffer.SetChar(System.Int32,System.Char)">
+            <summary>
+            Sets a char at the specified position.
+            </summary>
+            <param name="index">The index.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Util.DataBuffer.SetString(System.Int32,System.String,System.Text.Encoding)">
+            <summary>
+            Sets a string at the specified position.
+            </summary>
+            <param name="index">The index to start.</param>
+            <param name="value">The value.</param>
+            <param name="encoding">The encoding to use. (Default: <see cref="P:System.Text.Encoding.UTF8"/>)</param>
+            <returns>The number of needed bytes.</returns>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Util.DataBuffer.AddBytes(System.Byte[])">
+            <summary>
+            Adds the bytes.
+            </summary>
+            <param name="bytes">The bytes.</param>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Util.DataBuffer.AddByte(System.Byte)">
+            <summary>
+            Adds a byte.
+            </summary>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Util.DataBuffer.AddBoolean(System.Boolean)">
+            <summary>
+            Adds a boolean.
+            </summary>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Util.DataBuffer.AddUInt16(System.UInt16)">
+            <summary>
+            Adds an unsigned short.
+            </summary>
+            <param name="value">The Value.</param>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Util.DataBuffer.AddUInt32(System.UInt32)">
+            <summary>
+            Adds an unsigned integer.
+            </summary>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Util.DataBuffer.AddUInt64(System.UInt64)">
+            <summary>
+            Adds an unsigned long.
+            </summary>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Util.DataBuffer.AddSByte(System.SByte)">
+            <summary>
+            Adds a signed byte.
+            </summary>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Util.DataBuffer.AddInt16(System.Int16)">
+            <summary>
+            Adds a short.
+            </summary>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Util.DataBuffer.AddInt32(System.Int32)">
+            <summary>
+            Adds an integer.
+            </summary>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Util.DataBuffer.AddInt64(System.Int64)">
+            <summary>
+            Adds a long.
+            </summary>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Util.DataBuffer.AddSingle(System.Single)">
+            <summary>
+            Adds a float.
+            </summary>
+            <param name="value">The vlaue.</param>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Util.DataBuffer.AddDouble(System.Double)">
+            <summary>
+            Adds a double.
+            </summary>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Util.DataBuffer.AddTimeSpan(System.TimeSpan)">
+            <summary>
+            Adds a timespan (long).
+            </summary>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Util.DataBuffer.AddDateTime(System.DateTime)">
+            <summary>
+            Adds a timestamp (DateTime => TimeSpan).
+            </summary>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Util.DataBuffer.AddChar(System.Char)">
+            <summary>
+            Adds a char.
+            </summary>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Util.DataBuffer.AddString(System.String,System.Text.Encoding)">
+            <summary>
+            Adds a string.
+            </summary>
+            <param name="value">The value.</param>
+            <param name="encoding">The encoding to use. (Default: <see cref="P:System.Text.Encoding.UTF8"/>)</param>
+            <returns>The number of needed bytes.</returns>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Util.DataBuffer.GetBytes(System.Int32,System.Int32)">
+            <summary>
+            Returns a sequence of bytes.
+            </summary>
+            <param name="index">The index to start.</param>
+            <param name="count">The number of bytes.</param>
+            <returns>The byte sequence.</returns>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Util.DataBuffer.GetByte(System.Int32)">
+            <summary>
+            Returns a byte.
+            </summary>
+            <param name="index">The index.</param>
+            <returns>The byte.</returns>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Util.DataBuffer.GetBoolean(System.Int32)">
+            <summary>
+            Returns a boolean.
+            </summary>
+            <param name="index">The index.</param>
+            <returns>The boolean.</returns>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Util.DataBuffer.GetUInt16(System.Int32)">
+            <summary>
+            Returns a unsigned short.
+            </summary>
+            <param name="index">The index.</param>
+            <returns>The value.</returns>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Util.DataBuffer.GetUInt32(System.Int32)">
+            <summary>
+            Returns a unsigned int.
+            </summary>
+            <param name="index">The index.</param>
+            <returns>The value.</returns>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Util.DataBuffer.GetUInt64(System.Int32)">
+            <summary>
+            Returns a unsigned long.
+            </summary>
+            <param name="index">The index.</param>
+            <returns>The value.</returns>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Util.DataBuffer.GetSByte(System.Int32)">
+            <summary>
+            Returns a signed byte.
+            </summary>
+            <param name="index">The index.</param>
+            <returns>The value.</returns>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Util.DataBuffer.GetInt16(System.Int32)">
+            <summary>
+            Returns a short.
+            </summary>
+            <param name="index">The index.</param>
+            <returns>The value.</returns>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Util.DataBuffer.GetInt32(System.Int32)">
+            <summary>
+            Returns a int.
+            </summary>
+            <param name="index">The index.</param>
+            <returns>The value.</returns>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Util.DataBuffer.GetInt64(System.Int32)">
+            <summary>
+            Returns a long.
+            </summary>
+            <param name="index">The index.</param>
+            <returns>The value.</returns>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Util.DataBuffer.GetSingle(System.Int32)">
+            <summary>
+            Returns a float.
+            </summary>
+            <param name="index">The index.</param>
+            <returns>The value.</returns>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Util.DataBuffer.GetDouble(System.Int32)">
+            <summary>
+            Returns a double.
+            </summary>
+            <param name="index">The index.</param>
+            <returns>The value.</returns>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Util.DataBuffer.GetTimeSpan(System.Int32)">
+            <summary>
+            Returns a <see cref="T:System.TimeSpan"/>.
+            </summary>
+            <param name="index">The index.</param>
+            <returns>The value.</returns>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Util.DataBuffer.GetDateTime(System.Int32,System.Boolean)">
+            <summary>
+            Returns a <see cref="T:System.DateTime"/>.
+            </summary>
+            <param name="index">The index.</param>
+            <param name="localTime">The value indicates whether the local time shold be returned.</param>
+            <returns>The value.</returns>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Util.DataBuffer.GetChar(System.Int32)">
+            <summary>
+            Returns a char.
+            </summary>
+            <param name="index">The index.</param>
+            <returns>The char.</returns>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Util.DataBuffer.GetString(System.Int32,System.Int32,System.Text.Encoding)">
+            <summary>
+            Returns a string.
+            </summary>
+            <param name="index">The index to start.</param>
+            <param name="count">The number of bytes to use.</param>
+            <param name="encoding">The encoding to use. (Default: <see cref="P:System.Text.Encoding.UTF8"/>)</param>
+            <returns>The string.</returns>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Util.DataBuffer.IsEqual(System.Int32,System.Byte[])">
+            <summary>
+            Compares a byte array to a sequence of the buffer.
+            </summary>
+            <param name="index">The index to start the comparison.</param>
+            <param name="bytes">The byte array.</param>
+            <returns>true if the array equals the sequence otherwise false.</returns>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Util.DataBuffer.ResizeTo(System.Int32)">
+            <summary>
+            Resizes the Buffer.
+            </summary>
+            <param name="size">The new size of the Buffer.</param>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Util.DataBuffer.Equals(System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Util.DataBuffer.GetHashCode">
+            <inheritdoc/>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Util.DataBuffer.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Util.DataBuffer.InternalSwap(System.Byte[])">
+            <summary>
+            Swaps the bytes when needed for the <see cref="T:System.BitConverter"/>.
+            </summary>
+            <param name="array">The byte array.</param>
+        </member>
+        <member name="T:AMWD.Modbus.Common.Util.Extensions">
+            <summary>
+            Contains some extensions to handle some features more easily.
+            </summary>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Util.Extensions.GetBool(AMWD.Modbus.Common.Structures.ModbusObject)">
+            <summary>
+            Converts a register value into a boolean.
+            </summary>
+            <param name="obj">The Modbus object.</param>
+            <returns><c>false</c> if the value is zero (0), else <c>true</c>.</returns>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Util.Extensions.GetByte(AMWD.Modbus.Common.Structures.ModbusObject)">
+            <summary>
+            Converts a register value into a byte.
+            </summary>
+            <param name="register">The register.</param>
+            <returns></returns>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Util.Extensions.GetUInt16(AMWD.Modbus.Common.Structures.ModbusObject)">
+            <summary>
+            Converts a register into a word.
+            </summary>
+            <param name="register">The register.</param>
+            <returns></returns>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Util.Extensions.GetUInt32(System.Collections.Generic.IEnumerable{AMWD.Modbus.Common.Structures.ModbusObject},System.Int32,System.Boolean)">
+            <summary>
+            Converts two registers into a dword.
+            </summary>
+            <param name="list">The list of registers (min. 2).</param>
+            <param name="startIndex">The start index. Default: 0.</param>
+            <param name="inverseRegisters">Inverses the register order as required by some implementations. Default: false.</param>
+            <returns></returns>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Util.Extensions.GetUInt64(System.Collections.Generic.IEnumerable{AMWD.Modbus.Common.Structures.ModbusObject},System.Int32,System.Boolean)">
+            <summary>
+            Converts four registers into a qword.
+            </summary>
+            <param name="list">The list of registers (min. 4).</param>
+            <param name="startIndex">The start index. Default: 0.</param>
+            <param name="inverseRegisters">Inverses the register order as required by some implementations. Default: false.</param>
+            <returns></returns>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Util.Extensions.GetSByte(AMWD.Modbus.Common.Structures.ModbusObject)">
+            <summary>
+            Converts a register into a signed byte.
+            </summary>
+            <param name="register">The register.</param>
+            <returns></returns>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Util.Extensions.GetInt16(AMWD.Modbus.Common.Structures.ModbusObject)">
+            <summary>
+            Converts a register into a short.
+            </summary>
+            <param name="register">The register.</param>
+            <returns></returns>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Util.Extensions.GetInt32(System.Collections.Generic.IEnumerable{AMWD.Modbus.Common.Structures.ModbusObject},System.Int32,System.Boolean)">
+            <summary>
+            Converts two registers into an int.
+            </summary>
+            <param name="list">A list of registers (min. 2).</param>
+            <param name="startIndex">The start index. Default: 0.</param>
+            <param name="inverseRegisters">Inverses the register order as required by some implementations. Default: false.</param>
+            <returns></returns>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Util.Extensions.GetInt64(System.Collections.Generic.IEnumerable{AMWD.Modbus.Common.Structures.ModbusObject},System.Int32,System.Boolean)">
+            <summary>
+            Converts four registers into a long.
+            </summary>
+            <param name="list">A list of registers (min. 4).</param>
+            <param name="startIndex">The start index. Default: 0.</param>
+            <param name="inverseRegisters">Inverses the register order as required by some implementations. Default: false.</param>
+            <returns></returns>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Util.Extensions.GetSingle(System.Collections.Generic.IEnumerable{AMWD.Modbus.Common.Structures.ModbusObject},System.Int32,System.Boolean)">
+            <summary>
+            Converts two registers into a single.
+            </summary>
+            <param name="list">A list of registers (min. 2).</param>
+            <param name="startIndex">The start index. Default: 0.</param>
+            <param name="inverseRegisters">Inverses the register order as required by some implementations. Default: false.</param>
+            <returns></returns>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Util.Extensions.GetDouble(System.Collections.Generic.IEnumerable{AMWD.Modbus.Common.Structures.ModbusObject},System.Int32,System.Boolean)">
+            <summary>
+            Converts four registers into a double.
+            </summary>
+            <param name="list">A list of registers (min. 4).</param>
+            <param name="startIndex">The start index. Default: 0.</param>
+            <param name="inverseRegisters">Inverses the register order as required by some implementations. Default: false.</param>
+            <returns></returns>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Util.Extensions.GetString(System.Collections.Generic.IEnumerable{AMWD.Modbus.Common.Structures.ModbusObject},System.Int32,System.Int32,System.Text.Encoding,System.Boolean)">
+            <summary>
+            Converts a list of registers into a string.
+            </summary>
+            <param name="list">A list of registers.</param>
+            <param name="length">The number of registers to use.</param>
+            <param name="startIndex">The start index. Default: 0.</param>
+            <param name="encoding">The encoding to convert the string. Default: <see cref="P:System.Text.Encoding.UTF8"/>.</param>
+            <param name="flipBytes">A value indicating whether the bytes within a register (hi/lo byte) should be fliped due to correct character order.</param>
+            <returns></returns>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Util.Extensions.ToModbusCoil(System.Boolean,System.UInt16)">
+            <summary>
+            Converts a boolean to a Modbus Coil.
+            </summary>
+            <param name="value">The boolean value.</param>
+            <param name="address">The Modbus coil address.</param>
+            <returns></returns>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Util.Extensions.ToModbusRegister(System.Boolean,System.UInt16)">
+            <summary>
+            Converts a boolean to a Modbus register.
+            </summary>
+            <param name="value">The boolean value.</param>
+            <param name="address">The Modbus register address.</param>
+            <returns></returns>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Util.Extensions.ToModbusRegister(System.Byte,System.UInt16)">
+            <summary>
+            Converts a byte to a Modbus register.
+            </summary>
+            <param name="value">The byte to convert.</param>
+            <param name="address">The Modbus register address.</param>
+            <returns></returns>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Util.Extensions.ToModbusRegister(System.UInt16,System.UInt16)">
+            <summary>
+            Converts an unsigned short to a Modbus register.
+            </summary>
+            <param name="value">The unsigned short to convert.</param>
+            <param name="address">The Modbus register address.</param>
+            <returns></returns>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Util.Extensions.ToModbusRegister(System.UInt32,System.UInt16,System.Boolean)">
+            <summary>
+            Converts an unsigned integer to two Modbus registers.
+            </summary>
+            <param name="value">The unsigned integer to convert.</param>
+            <param name="address">The Modbus register address.</param>
+            <param name="inverseRegisters">Inverses the register order as required by some implementations. Default: false.</param>
+            <returns></returns>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Util.Extensions.ToModbusRegister(System.UInt64,System.UInt16,System.Boolean)">
+            <summary>
+            Converts an unsigned long to four Modbus registers.
+            </summary>
+            <param name="value">The unsigned long to convert.</param>
+            <param name="address">The Modbus register address.</param>
+            <param name="inverseRegisters">Inverses the register order as required by some implementations. Default: false.</param>
+            <returns></returns>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Util.Extensions.ToModbusRegister(System.SByte,System.UInt16)">
+            <summary>
+            Converts a signed byte to a Modbus register.
+            </summary>
+            <param name="value">The signed byte to convert.</param>
+            <param name="address">The Modbus register address.</param>
+            <returns></returns>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Util.Extensions.ToModbusRegister(System.Int16,System.UInt16)">
+            <summary>
+            Converts a signed short to a Modbus register.
+            </summary>
+            <param name="value">The short to convert.</param>
+            <param name="address">The Modbus register address.</param>
+            <returns></returns>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Util.Extensions.ToModbusRegister(System.Int32,System.UInt16,System.Boolean)">
+            <summary>
+            Converts a signed integer to two Modbus registers.
+            </summary>
+            <param name="value">The integer to convert.</param>
+            <param name="address">The Modbus register address.</param>
+            <param name="inverseRegisters">Inverses the register order as required by some implementations. Default: false.</param>
+            <returns></returns>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Util.Extensions.ToModbusRegister(System.Int64,System.UInt16,System.Boolean)">
+            <summary>
+            Converts a signed long to four Modbus registers.
+            </summary>
+            <param name="value">The long to convert.</param>
+            <param name="address">The Modbus register address.</param>
+            <param name="inverseRegisters">Inverses the register order as required by some implementations. Default: false.</param>
+            <returns></returns>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Util.Extensions.ToModbusRegister(System.Single,System.UInt16,System.Boolean)">
+            <summary>
+            Converts a single to two Modbus registers.
+            </summary>
+            <param name="value">The float to convert.</param>
+            <param name="address">The Modbus register address.</param>
+            <param name="inverseRegisters">Inverses the register order as required by some implementations. Default: false.</param>
+            <returns></returns>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Util.Extensions.ToModbusRegister(System.Double,System.UInt16,System.Boolean)">
+            <summary>
+            Converts a double to four Modbus registers.
+            </summary>
+            <param name="value">The double to convert.</param>
+            <param name="address">The Modbus register address.</param>
+            <param name="inverseRegisters">Inverses the register order as required by some implementations. Default: false.</param>
+            <returns></returns>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Util.Extensions.ToModbusRegister(System.String,System.UInt16,System.Text.Encoding,System.Boolean,System.Int32)">
+            <summary>
+            Converts a string into Modbus registers.
+            </summary>
+            <param name="str">The string to convert.</param>
+            <param name="address">The Modbus register address.</param>
+            <param name="encoding">The string encoding. Default: <see cref="P:System.Text.Encoding.UTF8"/>.</param>
+            <param name="flipBytes">A value indicating whether the bytes within a register (hi/lo byte) should be fliped due to correct character order.</param>
+            <param name="length">The zero-padded string length. If 0 (zero) the string will occupy the number of bytes equals to the actual lenght of the string.</param>
+            <returns></returns>
+        </member>
+        <member name="T:AMWD.Modbus.Common.Util.ModbusDevice">
+            <summary>
+            Represents a Modbus device.
+            </summary>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Util.ModbusDevice.#ctor(System.Byte)">
+            <summary>
+            Initializes a new instance of the <see cref="T:AMWD.Modbus.Common.Util.ModbusDevice"/> class.
+            </summary>
+            <param name="id">The device id.</param>
+        </member>
+        <member name="P:AMWD.Modbus.Common.Util.ModbusDevice.DeviceId">
+            <summary>
+            Gets the device id.
+            </summary>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Util.ModbusDevice.GetCoil(System.UInt16)">
+            <summary>
+            Gets a coil at an address.
+            </summary>
+            <param name="address">The address of the coil.</param>
+            <returns></returns>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Util.ModbusDevice.SetCoil(System.UInt16,System.Boolean)">
+            <summary>
+            Sets a coil value.
+            </summary>
+            <param name="address">The address.</param>
+            <param name="value">A value indicating whether the coil is active.</param>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Util.ModbusDevice.GetInput(System.UInt16)">
+            <summary>
+            Gets an input.
+            </summary>
+            <param name="address">The address.</param>
+            <returns></returns>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Util.ModbusDevice.SetInput(System.UInt16,System.Boolean)">
+            <summary>
+            Sets an input.
+            </summary>
+            <param name="address">The address.</param>
+            <param name="value">A value indicating whether the input is active.</param>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Util.ModbusDevice.GetInputRegister(System.UInt16)">
+            <summary>
+            Gets an input register.
+            </summary>
+            <param name="address">The address.</param>
+            <returns></returns>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Util.ModbusDevice.SetInputRegister(System.UInt16,System.UInt16)">
+            <summary>
+            Sets an input register.
+            </summary>
+            <param name="address">The address.</param>
+            <param name="value">The value.</param>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Util.ModbusDevice.GetHoldingRegister(System.UInt16)">
+            <summary>
+            Gets an holding register.
+            </summary>
+            <param name="address">The address.</param>
+            <returns></returns>
+        </member>
+        <member name="M:AMWD.Modbus.Common.Util.ModbusDevice.SetHoldingRegister(System.UInt16,System.UInt16)">
+            <summary>
+            Sets an holding register.
+            </summary>
+            <param name="address">The address.</param>
+            <param name="value">The value to set.</param>
+        </member>
+    </members>
+</doc>

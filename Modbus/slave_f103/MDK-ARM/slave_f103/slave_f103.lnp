@@ -1,0 +1,24 @@
+--cpu Cortex-M3
+"slave_f103\startup_stm32f103xb.o"
+"slave_f103\main.o"
+"slave_f103\stm32f1xx_it.o"
+"slave_f103\stm32f1xx_hal_msp.o"
+"slave_f103\stm32f1xx_hal_gpio_ex.o"
+"slave_f103\stm32f1xx_hal_tim.o"
+"slave_f103\stm32f1xx_hal_tim_ex.o"
+"slave_f103\stm32f1xx_hal_uart.o"
+"slave_f103\stm32f1xx_hal.o"
+"slave_f103\stm32f1xx_hal_rcc.o"
+"slave_f103\stm32f1xx_hal_rcc_ex.o"
+"slave_f103\stm32f1xx_hal_gpio.o"
+"slave_f103\stm32f1xx_hal_dma.o"
+"slave_f103\stm32f1xx_hal_cortex.o"
+"slave_f103\stm32f1xx_hal_pwr.o"
+"slave_f103\stm32f1xx_hal_flash.o"
+"slave_f103\stm32f1xx_hal_flash_ex.o"
+"slave_f103\stm32f1xx_hal_exti.o"
+"slave_f103\system_stm32f1xx.o"
+--strict --scatter "slave_f103\slave_f103.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "slave_f103.map" -o slave_f103\slave_f103.axf

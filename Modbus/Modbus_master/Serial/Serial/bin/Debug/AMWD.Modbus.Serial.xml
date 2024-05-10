@@ -1,0 +1,905 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>AMWD.Modbus.Serial</name>
+    </assembly>
+    <members>
+        <member name="T:AMWD.Modbus.Serial.Client.ModbusClient">
+            <summary>
+            A client to communicate with modbus devices via serial port.
+            </summary>
+        </member>
+        <member name="E:AMWD.Modbus.Serial.Client.ModbusClient.Connected">
+            <summary>
+            Raised when the client has the connection successfully established.
+            </summary>
+        </member>
+        <member name="E:AMWD.Modbus.Serial.Client.ModbusClient.Disconnected">
+            <summary>
+            Raised when the client has closed the connection.
+            </summary>
+        </member>
+        <member name="M:AMWD.Modbus.Serial.Client.ModbusClient.#ctor(System.String,Microsoft.Extensions.Logging.ILogger)">
+            <summary>
+            Initializes a new instance of the <see cref="T:AMWD.Modbus.Serial.Client.ModbusClient"/> class.
+            </summary>
+            <param name="portName">The serial port name.</param>
+            <param name="logger"><see cref="T:Microsoft.Extensions.Logging.ILogger"/> instance to write log entries.</param>
+        </member>
+        <member name="P:AMWD.Modbus.Serial.Client.ModbusClient.PortName">
+            <summary>
+            Gets the serial port name.
+            </summary>
+        </member>
+        <member name="P:AMWD.Modbus.Serial.Client.ModbusClient.BaudRate">
+            <summary>
+            Gets or sets the baud rate. Default: 38400.
+            </summary>
+        </member>
+        <member name="P:AMWD.Modbus.Serial.Client.ModbusClient.DataBits">
+            <summary>
+            Gets or sets the number of data bits. Default: 8.
+            </summary>
+        </member>
+        <member name="P:AMWD.Modbus.Serial.Client.ModbusClient.Parity">
+            <summary>
+            Gets or sets the parity. Default: None.
+            </summary>
+        </member>
+        <member name="P:AMWD.Modbus.Serial.Client.ModbusClient.StopBits">
+            <summary>
+            Gets or sets the number of stop bits. Default: None.
+            </summary>
+        </member>
+        <member name="P:AMWD.Modbus.Serial.Client.ModbusClient.Handshake">
+            <summary>
+            Gets or sets the handshake. Default: None.
+            </summary>
+        </member>
+        <member name="P:AMWD.Modbus.Serial.Client.ModbusClient.ConnectingTask">
+            <summary>
+            Gets the result of the asynchronous initialization of this instance.
+            </summary>
+        </member>
+        <member name="P:AMWD.Modbus.Serial.Client.ModbusClient.IsConnected">
+            <summary>
+            Gets a value indicating whether the connection is established.
+            </summary>
+        </member>
+        <member name="P:AMWD.Modbus.Serial.Client.ModbusClient.ReconnectTimeSpan">
+            <summary>
+            Gets or sets the max reconnect timespan until the reconnect is aborted.
+            </summary>
+        </member>
+        <member name="P:AMWD.Modbus.Serial.Client.ModbusClient.SendTimeout">
+            <summary>
+            Gets or sets the send timeout in milliseconds. Default 1000 (recommended).
+            </summary>
+        </member>
+        <member name="P:AMWD.Modbus.Serial.Client.ModbusClient.ReceiveTimeout">
+            <summary>
+            Gets or sets the receive timeout in milliseconds. Default 1000 (recommended).
+            </summary>
+        </member>
+        <member name="P:AMWD.Modbus.Serial.Client.ModbusClient.BufferSize">
+            <summary>
+            Gets or sets buffer size in bytes.
+            </summary>
+        </member>
+        <member name="P:AMWD.Modbus.Serial.Client.ModbusClient.DriverEnableRS485">
+            <summary>
+            Gets or sets a value indicating whether to indicate the driver to switch to RS485 mode.
+            </summary>
+        </member>
+        <member name="P:AMWD.Modbus.Serial.Client.ModbusClient.InterRequestDelay">
+            <summary>
+            Gets or sets a delay between two requests in a row.
+            </summary>
+        </member>
+        <member name="P:AMWD.Modbus.Serial.Client.ModbusClient.DisableTransactionId">
+            <summary>
+            Gets or sets a value indicating whether to disable the transaction id check.  NOT RECOMMENDED
+            </summary>
+        </member>
+        <member name="M:AMWD.Modbus.Serial.Client.ModbusClient.AvailablePorts">
+            <summary>
+            Returns a list of available serial ports.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AMWD.Modbus.Serial.Client.ModbusClient.Connect(System.Threading.CancellationToken)">
+            <summary>
+            Connects the client to the device.
+            </summary>
+            <param name="cancellationToken"></param>
+            <returns>An awaitable task.</returns>
+        </member>
+        <member name="M:AMWD.Modbus.Serial.Client.ModbusClient.Disconnect(System.Threading.CancellationToken)">
+            <summary>
+            Disconnects the client.
+            </summary>
+            <param name="cancellationToken"></param>
+            <returns>An awaitable task.</returns>
+        </member>
+        <member name="M:AMWD.Modbus.Serial.Client.ModbusClient.ReadCoils(System.Byte,System.UInt16,System.UInt16,System.Threading.CancellationToken)">
+            <summary>
+            Reads one or more coils of a device. (Modbus function 1).
+            </summary>
+            <param name="deviceId">The id to address the device (slave).</param>
+            <param name="startAddress">The first coil number to read.</param>
+            <param name="count">The number of coils to read.</param>
+            <param name="cancellationToken">A cancellation token to abort the action.</param>
+            <returns>A list of coils or null on error.</returns>
+        </member>
+        <member name="M:AMWD.Modbus.Serial.Client.ModbusClient.ReadDiscreteInputs(System.Byte,System.UInt16,System.UInt16,System.Threading.CancellationToken)">
+            <summary>
+            Reads one or more discrete inputs of a device. (Modbus function 2).
+            </summary>
+            <param name="deviceId">The id to address the device (slave).</param>
+            <param name="startAddress">The first discrete input number to read.</param>
+            <param name="count">The number of discrete inputs to read.</param>
+            <param name="cancellationToken">A cancellation token to abort the action.</param>
+            <returns>A list of discrete inputs or null on error.</returns>
+        </member>
+        <member name="M:AMWD.Modbus.Serial.Client.ModbusClient.ReadHoldingRegisters(System.Byte,System.UInt16,System.UInt16,System.Threading.CancellationToken)">
+            <summary>
+            Reads one or more holding registers of a device. (Modbus function 3).
+            </summary>
+            <param name="deviceId">The id to address the device (slave).</param>
+            <param name="startAddress">The first register number to read.</param>
+            <param name="count">The number of registers to read.</param>
+            <param name="cancellationToken">A cancellation token to abort the action.</param>
+            <returns>A list of registers or null on error.</returns>
+        </member>
+        <member name="M:AMWD.Modbus.Serial.Client.ModbusClient.ReadInputRegisters(System.Byte,System.UInt16,System.UInt16,System.Threading.CancellationToken)">
+            <summary>
+            Reads one or more input registers of a device. (Modbus function 4).
+            </summary>
+            <param name="deviceId">The id to address the device (slave).</param>
+            <param name="startAddress">The first register number to read.</param>
+            <param name="count">The number of registers to read.</param>
+            <param name="cancellationToken">A cancellation token to abort the action.</param>
+            <returns>A list of registers or null on error.</returns>
+        </member>
+        <member name="M:AMWD.Modbus.Serial.Client.ModbusClient.ReadDeviceInformation(System.Byte,AMWD.Modbus.Common.DeviceIDCategory,AMWD.Modbus.Common.DeviceIDObject,System.Threading.CancellationToken)">
+            <summary>
+            Reads device information. (Modbus function 43).
+            </summary>
+            <param name="deviceId">The id to address the device (slave).</param>
+            <param name="categoryId">The category to read (basic, regular, extended, individual).</param>
+            <param name="objectId">The first object id to read.</param>
+            <param name="cancellationToken">A cancellation token to abort the action.</param>
+            <returns>A map of device information and their content as string.</returns>
+        </member>
+        <member name="M:AMWD.Modbus.Serial.Client.ModbusClient.ReadDeviceInformationRaw(System.Byte,AMWD.Modbus.Common.DeviceIDCategory,AMWD.Modbus.Common.DeviceIDObject,System.Threading.CancellationToken)">
+            <summary>
+            Reads device information. (Modbus function 43).
+            </summary>
+            <param name="deviceId">The id to address the device (slave).</param>
+            <param name="categoryId">The category to read (basic, regular, extended, individual).</param>
+            <param name="objectId">The first object id to read.</param>
+            <param name="cancellationToken">A cancellation token to abort the action.</param>
+            <returns>A map of device information and their content as raw bytes.</returns>>
+        </member>
+        <member name="M:AMWD.Modbus.Serial.Client.ModbusClient.WriteSingleCoil(System.Byte,AMWD.Modbus.Common.Structures.ModbusObject,System.Threading.CancellationToken)">
+            <summary>
+            Writes a single coil status to the Modbus device. (Modbus function 5)
+            </summary>
+            <param name="deviceId">The id to address the device (slave).</param>
+            <param name="coil">The coil to write.</param>
+            <param name="cancellationToken">A cancellation token to abort the action.</param>
+            <returns>true on success, otherwise false.</returns>
+        </member>
+        <member name="M:AMWD.Modbus.Serial.Client.ModbusClient.WriteSingleRegister(System.Byte,AMWD.Modbus.Common.Structures.ModbusObject,System.Threading.CancellationToken)">
+            <summary>
+            Writes a single register to the Modbus device. (Modbus function 6)
+            </summary>
+            <param name="deviceId">The id to address the device (slave).</param>
+            <param name="register">The register to write.</param>
+            <param name="cancellationToken">A cancellation token to abort the action.</param>
+            <returns>true on success, otherwise false.</returns>
+        </member>
+        <member name="M:AMWD.Modbus.Serial.Client.ModbusClient.WriteCoils(System.Byte,System.Collections.Generic.IEnumerable{AMWD.Modbus.Common.Structures.ModbusObject},System.Threading.CancellationToken)">
+            <summary>
+            Writes multiple coil status to the Modbus device. (Modbus function 15)
+            </summary>
+            <param name="deviceId">The id to address the device (slave).</param>
+            <param name="coils">A list of coils to write.</param>
+            <param name="cancellationToken">A cancellation token to abort the action.</param>
+            <returns>true on success, otherwise false.</returns>
+        </member>
+        <member name="M:AMWD.Modbus.Serial.Client.ModbusClient.WriteRegisters(System.Byte,System.Collections.Generic.IEnumerable{AMWD.Modbus.Common.Structures.ModbusObject},System.Threading.CancellationToken)">
+            <summary>
+            Writes multiple registers to the Modbus device. (Modbus function 16)
+            </summary>
+            <param name="deviceId">The id to address the device (slave).</param>
+            <param name="registers">A list of registers to write.</param>
+            <param name="cancellationToken">A cancellation token to abort the action.</param>
+            <returns>true on success, otherwise false.</returns>
+        </member>
+        <member name="M:AMWD.Modbus.Serial.Client.ModbusClient.Dispose">
+            <summary>
+            Releases all managed and unmanaged resources used by the <see cref="T:AMWD.Modbus.Serial.Client.ModbusClient"/>.
+            </summary>
+        </member>
+        <member name="M:AMWD.Modbus.Serial.Client.ModbusClient.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="T:AMWD.Modbus.Serial.BaudRate">
+            <summary>
+            Defines the baud rates for a serial connection.
+            </summary>
+        </member>
+        <member name="F:AMWD.Modbus.Serial.BaudRate.Baud2400">
+            <summary>
+            2400 Baud.
+            </summary>
+        </member>
+        <member name="F:AMWD.Modbus.Serial.BaudRate.Baud4800">
+            <summary>
+            4800 Baud.
+            </summary>
+        </member>
+        <member name="F:AMWD.Modbus.Serial.BaudRate.Baud9600">
+            <summary>
+            9600 Baud.
+            </summary>
+        </member>
+        <member name="F:AMWD.Modbus.Serial.BaudRate.Baud19200">
+            <summary>
+            19200 Baud.
+            </summary>
+        </member>
+        <member name="F:AMWD.Modbus.Serial.BaudRate.Baud38400">
+            <summary>
+            38400 Baud.
+            </summary>
+        </member>
+        <member name="F:AMWD.Modbus.Serial.BaudRate.Baud57600">
+            <summary>
+            57600 Baud.
+            </summary>
+        </member>
+        <member name="F:AMWD.Modbus.Serial.BaudRate.Baud115200">
+            <summary>
+            115200 Baud.
+            </summary>
+        </member>
+        <member name="T:AMWD.Modbus.Serial.Protocol.Request">
+            <summary>
+            Represents the request from a client to the server.
+            </summary>
+        </member>
+        <member name="M:AMWD.Modbus.Serial.Protocol.Request.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:AMWD.Modbus.Serial.Protocol.Request"/> class.
+            </summary>
+            <remarks>
+            The transaction id is automatically set to a unique number.
+            </remarks>
+        </member>
+        <member name="M:AMWD.Modbus.Serial.Protocol.Request.#ctor(System.Byte[])">
+            <summary>
+            Initializes a new instance of the <see cref="T:AMWD.Modbus.Serial.Protocol.Request"/> class.
+            </summary>
+            <param name="bytes">The serialized request from the client.</param>
+        </member>
+        <member name="P:AMWD.Modbus.Serial.Protocol.Request.DeviceId">
+            <summary>
+            Gets the id to identify the device.
+            </summary>
+        </member>
+        <member name="P:AMWD.Modbus.Serial.Protocol.Request.Function">
+            <summary>
+            Gets or sets the function code.
+            </summary>
+        </member>
+        <member name="P:AMWD.Modbus.Serial.Protocol.Request.Address">
+            <summary>
+            Gets or sets the (first) address.
+            </summary>
+        </member>
+        <member name="P:AMWD.Modbus.Serial.Protocol.Request.Count">
+            <summary>
+            Gets or sets the number of elements.
+            </summary>
+        </member>
+        <member name="P:AMWD.Modbus.Serial.Protocol.Request.Bytes">
+            <summary>
+            Gets or sets the data bytes.
+            </summary>
+        </member>
+        <member name="P:AMWD.Modbus.Serial.Protocol.Request.Data">
+            <summary>
+            Gets or sets the data.
+            </summary>
+        </member>
+        <member name="P:AMWD.Modbus.Serial.Protocol.Request.MEIType">
+            <summary>
+            Gets or sets the Encapsulated Interface type.
+            Only needed on <see cref="F:AMWD.Modbus.Common.FunctionCode.EncapsulatedInterface"/>.
+            </summary>
+        </member>
+        <member name="P:AMWD.Modbus.Serial.Protocol.Request.MEICategory">
+            <summary>
+            Gets or sets the Device ID code (category).
+            Only needed on <see cref="F:AMWD.Modbus.Common.FunctionCode.EncapsulatedInterface"/> and <see cref="F:AMWD.Modbus.Common.MEIType.ReadDeviceInformation"/>.
+            </summary>
+        </member>
+        <member name="P:AMWD.Modbus.Serial.Protocol.Request.MEIObject">
+            <summary>
+            Gets or sets the first Object ID to read.
+            </summary>
+        </member>
+        <member name="M:AMWD.Modbus.Serial.Protocol.Request.Serialize">
+            <summary>
+            Serializes the request ready to send via serial.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AMWD.Modbus.Serial.Protocol.Request.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="M:AMWD.Modbus.Serial.Protocol.Request.GetHashCode">
+            <inheritdoc/>
+        </member>
+        <member name="M:AMWD.Modbus.Serial.Protocol.Request.Equals(System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="T:AMWD.Modbus.Serial.Protocol.Response">
+            <summary>
+            Represents the response from the server to a client.
+            </summary>
+        </member>
+        <member name="M:AMWD.Modbus.Serial.Protocol.Response.#ctor(AMWD.Modbus.Serial.Protocol.Request)">
+            <summary>
+            Initializes a new instance of the <see cref="T:AMWD.Modbus.Serial.Protocol.Response"/> class.
+            </summary>
+            <param name="request">The corresponding request.</param>
+        </member>
+        <member name="M:AMWD.Modbus.Serial.Protocol.Response.#ctor(System.Byte[])">
+            <summary>
+            Initializes a new instance of the <see cref="T:AMWD.Modbus.Serial.Protocol.Response"/> class.
+            </summary>
+            <param name="bytes">The serialized response.</param>
+        </member>
+        <member name="P:AMWD.Modbus.Serial.Protocol.Response.DeviceId">
+            <summary>
+            Gets the id to identify the device.
+            </summary>
+        </member>
+        <member name="P:AMWD.Modbus.Serial.Protocol.Response.Function">
+            <summary>
+            Gets the function code.
+            </summary>
+        </member>
+        <member name="P:AMWD.Modbus.Serial.Protocol.Response.IsError">
+            <summary>
+            Gets a value indicating whether an error occurred.
+            </summary>
+        </member>
+        <member name="P:AMWD.Modbus.Serial.Protocol.Response.ErrorCode">
+            <summary>
+            Gets or sets the error/exception code.
+            </summary>
+        </member>
+        <member name="P:AMWD.Modbus.Serial.Protocol.Response.ErrorMessage">
+            <summary>
+            Gets the error message.
+            </summary>
+        </member>
+        <member name="P:AMWD.Modbus.Serial.Protocol.Response.Address">
+            <summary>
+            Gets or sets the register address.
+            </summary>
+        </member>
+        <member name="P:AMWD.Modbus.Serial.Protocol.Response.Count">
+            <summary>
+            Gets or sets the number of registers.
+            </summary>
+        </member>
+        <member name="P:AMWD.Modbus.Serial.Protocol.Response.Data">
+            <summary>
+            Gets or sets the data.
+            </summary>
+        </member>
+        <member name="P:AMWD.Modbus.Serial.Protocol.Response.IsTimeout">
+            <summary>
+            Gets a value indicating whether the response is a result of an timeout.
+            </summary>
+        </member>
+        <member name="P:AMWD.Modbus.Serial.Protocol.Response.MEIType">
+            <summary>
+            Gets or sets the Encapsulated Interface type.
+            Only needed on <see cref="F:AMWD.Modbus.Common.FunctionCode.EncapsulatedInterface"/>.
+            </summary>
+        </member>
+        <member name="P:AMWD.Modbus.Serial.Protocol.Response.MEICategory">
+            <summary>
+            Gets or sets the Device ID code (category).
+            Only needed on <see cref="F:AMWD.Modbus.Common.FunctionCode.EncapsulatedInterface"/> and <see cref="F:AMWD.Modbus.Common.MEIType.ReadDeviceInformation"/>.
+            </summary>
+        </member>
+        <member name="P:AMWD.Modbus.Serial.Protocol.Response.MEIObject">
+            <summary>
+            Gets or sets the first Object ID to read.
+            </summary>
+        </member>
+        <member name="P:AMWD.Modbus.Serial.Protocol.Response.ConformityLevel">
+            <summary>
+            Gets or sets the conformity level of the device information.
+            </summary>
+        </member>
+        <member name="P:AMWD.Modbus.Serial.Protocol.Response.MoreRequestsNeeded">
+            <summary>
+            Gets or sets a value indicating whether further requests are needed to gather all device information.
+            </summary>
+        </member>
+        <member name="P:AMWD.Modbus.Serial.Protocol.Response.NextObjectId">
+            <summary>
+            Gets or sets the object id to start with the next request.
+            </summary>
+        </member>
+        <member name="P:AMWD.Modbus.Serial.Protocol.Response.ObjectCount">
+            <summary>
+            Gets or sets the number of objects in list (appending).
+            </summary>
+        </member>
+        <member name="M:AMWD.Modbus.Serial.Protocol.Response.Serialize">
+            <summary>
+            Serializes the response to send.
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:AMWD.Modbus.Serial.Protocol.Response.ToString">
+            <inheritdoc/>
+        </member>
+        <member name="M:AMWD.Modbus.Serial.Protocol.Response.GetHashCode">
+            <inheritdoc/>
+        </member>
+        <member name="M:AMWD.Modbus.Serial.Protocol.Response.Equals(System.Object)">
+            <inheritdoc/>
+        </member>
+        <member name="T:AMWD.Modbus.Serial.Server.ModbusSerialRequestHandler">
+            <summary>
+            A handler to process the modbus requests.
+            </summary>
+            <param name="request">The request to process.</param>
+            <returns>The response.</returns>
+        </member>
+        <member name="T:AMWD.Modbus.Serial.Server.ModbusServer">
+            <summary>
+            A server to communicate via Modbus RTU.
+            </summary>
+        </member>
+        <member name="E:AMWD.Modbus.Serial.Server.ModbusServer.InputWritten">
+            <summary>
+            Raised when a coil was written.
+            </summary>
+        </member>
+        <member name="E:AMWD.Modbus.Serial.Server.ModbusServer.RegisterWritten">
+            <summary>
+            Raised when a register was written.
+            </summary>
+        </member>
+        <member name="M:AMWD.Modbus.Serial.Server.ModbusServer.#ctor(System.String,Microsoft.Extensions.Logging.ILogger,AMWD.Modbus.Serial.Server.ModbusSerialRequestHandler)">
+            <summary>
+            Initializes a new instance of the <see cref="T:AMWD.Modbus.Serial.Server.ModbusServer"/> class.
+            </summary>
+            <param name="portName">The serial port name.</param>
+            <param name="logger">A logger.</param>
+            <param name="requestHandler">Set this request handler to override the default implemented handling. (Default: serving the data provided by Set* methods)</param>
+        </member>
+        <member name="M:AMWD.Modbus.Serial.Server.ModbusServer.#ctor(System.String,AMWD.Modbus.Serial.Server.ModbusSerialRequestHandler)">
+            <summary>
+            Initializes a new instance of the <see cref="T:AMWD.Modbus.Serial.Server.ModbusServer"/> class.
+            </summary>
+            <param name="portName">The serial port name.</param>
+            <param name="requestHandler">Set this request handler to override the default implemented handling. (Default: serving the data provided by Set* methods)</param>
+        </member>
+        <member name="P:AMWD.Modbus.Serial.Server.ModbusServer.Initialization">
+            <summary>
+            Gets the result of the asynchronous initialization of this instance.
+            </summary>
+        </member>
+        <member name="P:AMWD.Modbus.Serial.Server.ModbusServer.PortName">
+            <summary>
+            Gets the serial port name.
+            </summary>
+        </member>
+        <member name="P:AMWD.Modbus.Serial.Server.ModbusServer.BaudRate">
+            <summary>
+            Gets or sets the baud rate. Default: 38400.
+            </summary>
+        </member>
+        <member name="P:AMWD.Modbus.Serial.Server.ModbusServer.DataBits">
+            <summary>
+            Gets or sets the number of data bits. Default: 8.
+            </summary>
+        </member>
+        <member name="P:AMWD.Modbus.Serial.Server.ModbusServer.Parity">
+            <summary>
+            Gets or sets the parity. Default: None.
+            </summary>
+        </member>
+        <member name="P:AMWD.Modbus.Serial.Server.ModbusServer.StopBits">
+            <summary>
+            Gets or sets the number of stop bits. Default: None.
+            </summary>
+        </member>
+        <member name="P:AMWD.Modbus.Serial.Server.ModbusServer.Handshake">
+            <summary>
+            Gets or sets the handshake. Default: None.
+            </summary>
+        </member>
+        <member name="P:AMWD.Modbus.Serial.Server.ModbusServer.BufferSize">
+            <summary>
+            Gets or sets buffer size in bytes.
+            </summary>
+        </member>
+        <member name="P:AMWD.Modbus.Serial.Server.ModbusServer.Timeout">
+            <summary>
+            Gets or sets the send/receive timeout. Default: 1 second (recommended).
+            </summary>
+        </member>
+        <member name="P:AMWD.Modbus.Serial.Server.ModbusServer.StartTime">
+            <summary>
+            Gets the UTC timestamp of the server start.
+            </summary>
+        </member>
+        <member name="P:AMWD.Modbus.Serial.Server.ModbusServer.IsRunning">
+            <summary>
+            Gets a value indicating whether the server is running.
+            </summary>
+        </member>
+        <member name="P:AMWD.Modbus.Serial.Server.ModbusServer.DeviceIds">
+            <summary>
+            Gets a list of device ids the server handles.
+            </summary>
+        </member>
+        <member name="M:AMWD.Modbus.Serial.Server.ModbusServer.GetCoil(System.Byte,System.UInt16)">
+            <summary>
+            Returns a coil of a device.
+            </summary>
+            <param name="deviceId">The device id.</param>
+            <param name="coilNumber">The address of the coil.</param>
+            <returns>The coil.</returns>
+        </member>
+        <member name="M:AMWD.Modbus.Serial.Server.ModbusServer.SetCoil(System.Byte,System.UInt16,System.Boolean)">
+            <summary>
+            Sets the status of a coild to a device.
+            </summary>
+            <param name="deviceId">The device id.</param>
+            <param name="coilNumber">The address of the coil.</param>
+            <param name="value">The status of the coil.</param>
+        </member>
+        <member name="M:AMWD.Modbus.Serial.Server.ModbusServer.SetCoil(System.Byte,AMWD.Modbus.Common.Structures.ModbusObject)">
+            <summary>
+            Sets the status of a coild to a device.
+            </summary>
+            <param name="deviceId">The device id.</param>
+            <param name="coil">The coil.</param>
+        </member>
+        <member name="M:AMWD.Modbus.Serial.Server.ModbusServer.GetDiscreteInput(System.Byte,System.UInt16)">
+            <summary>
+            Returns a discrete input of a device.
+            </summary>
+            <param name="deviceId">The device id.</param>
+            <param name="inputNumber">The discrete input address.</param>
+            <returns>The discrete input.</returns>
+        </member>
+        <member name="M:AMWD.Modbus.Serial.Server.ModbusServer.SetDiscreteInput(System.Byte,System.UInt16,System.Boolean)">
+            <summary>
+            Sets a discrete input of a device.
+            </summary>
+            <param name="deviceId">The device id.</param>
+            <param name="inputNumber">The discrete input address.</param>
+            <param name="value">A value inidcating whether the input is set.</param>
+        </member>
+        <member name="M:AMWD.Modbus.Serial.Server.ModbusServer.SetDiscreteInput(System.Byte,AMWD.Modbus.Common.Structures.ModbusObject)">
+            <summary>
+            Sets a discrete input of a device.
+            </summary>
+            <param name="deviceId">The device id.</param>
+            <param name="discreteInput">The discrete input to set.</param>
+        </member>
+        <member name="M:AMWD.Modbus.Serial.Server.ModbusServer.GetInputRegister(System.Byte,System.UInt16)">
+            <summary>
+            Returns an input register of a device.
+            </summary>
+            <param name="deviceId">The device id.</param>
+            <param name="registerNumber">The input register address.</param>
+            <returns>The input register.</returns>
+        </member>
+        <member name="M:AMWD.Modbus.Serial.Server.ModbusServer.SetInputRegister(System.Byte,System.UInt16,System.UInt16)">
+            <summary>
+            Sets an input register of a device.
+            </summary>
+            <param name="deviceId">The device id.</param>
+            <param name="registerNumber">The input register address.</param>
+            <param name="value">The register value.</param>
+        </member>
+        <member name="M:AMWD.Modbus.Serial.Server.ModbusServer.SetInputRegister(System.Byte,System.UInt16,System.Byte,System.Byte)">
+            <summary>
+            Sets an input register of a device.
+            </summary>
+            <param name="deviceId">The device id.</param>
+            <param name="registerNumber">The input register address.</param>
+            <param name="highByte">The High-Byte value.</param>
+            <param name="lowByte">The Low-Byte value.</param>
+        </member>
+        <member name="M:AMWD.Modbus.Serial.Server.ModbusServer.SetInputRegister(System.Byte,AMWD.Modbus.Common.Structures.ModbusObject)">
+            <summary>
+            Sets an input register of a device.
+            </summary>
+            <param name="deviceId">The device id.</param>
+            <param name="register">The input register.</param>
+        </member>
+        <member name="M:AMWD.Modbus.Serial.Server.ModbusServer.GetHoldingRegister(System.Byte,System.UInt16)">
+            <summary>
+            Returns a holding register of a device.
+            </summary>
+            <param name="deviceId">The device id.</param>
+            <param name="registerNumber">The holding register address.</param>
+            <returns>The holding register.</returns>
+        </member>
+        <member name="M:AMWD.Modbus.Serial.Server.ModbusServer.SetHoldingRegister(System.Byte,System.UInt16,System.UInt16)">
+            <summary>
+            Sets a holding register of a device.
+            </summary>
+            <param name="deviceId">The device id.</param>
+            <param name="registerNumber">The holding register address.</param>
+            <param name="value">The register value.</param>
+        </member>
+        <member name="M:AMWD.Modbus.Serial.Server.ModbusServer.SetHoldingRegister(System.Byte,System.UInt16,System.Byte,System.Byte)">
+            <summary>
+            Sets a holding register of a device.
+            </summary>
+            <param name="deviceId">The device id.</param>
+            <param name="registerNumber">The holding register address.</param>
+            <param name="highByte">The high byte value.</param>
+            <param name="lowByte">The low byte value.</param>
+        </member>
+        <member name="M:AMWD.Modbus.Serial.Server.ModbusServer.SetHoldingRegister(System.Byte,AMWD.Modbus.Common.Structures.ModbusObject)">
+            <summary>
+            Sets a holding register of a device.
+            </summary>
+            <param name="deviceId">The device id.</param>
+            <param name="register">The register.</param>
+        </member>
+        <member name="M:AMWD.Modbus.Serial.Server.ModbusServer.AddDevice(System.Byte)">
+            <summary>
+            Adds a new device to the server.
+            </summary>
+            <param name="deviceId">The id of the new device.</param>
+            <returns>true on success, otherwise false.</returns>
+        </member>
+        <member name="M:AMWD.Modbus.Serial.Server.ModbusServer.RemoveDevice(System.Byte)">
+            <summary>
+            Removes a device from the server.
+            </summary>
+            <param name="deviceId">The device id to remove.</param>
+            <returns>true on success, otherwise false.</returns>
+        </member>
+        <member name="M:AMWD.Modbus.Serial.Server.ModbusServer.Dispose">
+            <inheritdoc/>
+        </member>
+        <member name="T:AMWD.Modbus.Serial.Util.Extensions">
+            <summary>
+            Contains some extensions to handle some features more easily.
+            </summary>
+        </member>
+        <member name="M:AMWD.Modbus.Serial.Util.Extensions.GetAttribute``1(System.Enum)">
+            <summary>
+            Tries to return an attribute of an enum value.
+            </summary>
+            <typeparam name="T">The attribute type.</typeparam>
+            <param name="enumValue">The enum value.</param>
+            <returns>The first attribute of the type present or null.</returns>
+        </member>
+        <member name="M:AMWD.Modbus.Serial.Util.Extensions.GetDescription(System.Enum)">
+            <summary>
+            Tries to read the description of an enum value.
+            </summary>
+            <param name="enumValue">The enum value.</param>
+            <returns>The description or the <see cref="M:System.Enum.ToString"/></returns>
+        </member>
+        <member name="M:AMWD.Modbus.Serial.Util.Extensions.Forget(System.Threading.Tasks.Task)">
+            <summary>
+            Forgets about the result of the task. (Prevent compiler warning).
+            </summary>
+            <param name="task">The task to forget.</param>
+        </member>
+        <member name="T:AMWD.Modbus.Serial.Util.RequestTask">
+            <summary>
+            Implements a structure to enqueue a request to perform including the option to cancel.
+            </summary>
+        </member>
+        <member name="P:AMWD.Modbus.Serial.Util.RequestTask.Request">
+            <summary>
+            Gets or sets the enqueued request.
+            </summary>
+        </member>
+        <member name="P:AMWD.Modbus.Serial.Util.RequestTask.TaskCompletionSource">
+            <summary>
+            Gets or sets the task completion source to resolve when the request is done.
+            </summary>
+        </member>
+        <member name="P:AMWD.Modbus.Serial.Util.RequestTask.Registration">
+            <summary>
+            Gets or sets the registration to cancel this request.
+            </summary>
+        </member>
+        <member name="T:AMWD.Modbus.Serial.Util.SafeUnixHandle">
+            <summary>
+            Implements a safe handle for unix systems.
+            Found on https://stackoverflow.com/a/10388107
+            </summary>
+        </member>
+        <member name="M:AMWD.Modbus.Serial.Util.SafeUnixHandle.#ctor">
+            <summary>
+            Initializes a new instance of the <see cref="T:AMWD.Modbus.Serial.Util.SafeUnixHandle"/> class.
+            </summary>
+        </member>
+        <member name="P:AMWD.Modbus.Serial.Util.SafeUnixHandle.IsInvalid">
+            <inheritdoc/>
+        </member>
+        <member name="M:AMWD.Modbus.Serial.Util.SafeUnixHandle.ReleaseHandle">
+            <inheritdoc/>
+        </member>
+        <member name="T:AMWD.Modbus.Serial.Util.SerialRS485">
+            <summary>
+            Represents the structure of the driver settings for RS485.
+            </summary>
+        </member>
+        <member name="F:AMWD.Modbus.Serial.Util.SerialRS485.Flags">
+            <summary>
+            The flags to change the driver state.
+            </summary>
+        </member>
+        <member name="F:AMWD.Modbus.Serial.Util.SerialRS485.RtsDelayBeforeSend">
+            <summary>
+            The delay in milliseconds before send.
+            </summary>
+        </member>
+        <member name="F:AMWD.Modbus.Serial.Util.SerialRS485.RtsDelayAfterSend">
+            <summary>
+            The delay in milliseconds after send.
+            </summary>
+        </member>
+        <member name="T:AMWD.Modbus.Serial.Util.RS485Flags">
+            <summary>
+            The flags for the driver state.
+            </summary>
+        </member>
+        <member name="F:AMWD.Modbus.Serial.Util.RS485Flags.Enabled">
+            <summary>
+            RS485 is enabled.
+            </summary>
+        </member>
+        <member name="F:AMWD.Modbus.Serial.Util.RS485Flags.RtsOnSend">
+            <summary>
+            RS485 uses RTS on send.
+            </summary>
+        </member>
+        <member name="F:AMWD.Modbus.Serial.Util.RS485Flags.RtsAfterSend">
+            <summary>
+            RS485 uses RTS after send.
+            </summary>
+        </member>
+        <member name="F:AMWD.Modbus.Serial.Util.RS485Flags.RxDuringTx">
+            <summary>
+            Receive during send (duplex).
+            </summary>
+        </member>
+        <member name="T:AMWD.Modbus.Serial.Util.UnixIOException">
+            <summary>
+            Represents a unix specific IO exception.
+            Found on https://stackoverflow.com/a/10388107
+            </summary>
+        </member>
+        <member name="M:AMWD.Modbus.Serial.Util.UnixIOException.#ctor">
+            <summary>
+            Initializes a new instance of a <see cref="T:AMWD.Modbus.Serial.Util.UnixIOException"/> class.
+            </summary>
+        </member>
+        <member name="M:AMWD.Modbus.Serial.Util.UnixIOException.#ctor(System.Int32)">
+            <summary>
+            Initializes a new instance of a <see cref="T:AMWD.Modbus.Serial.Util.UnixIOException"/> class.
+            </summary>
+            <param name="error">The error number.</param>
+        </member>
+        <member name="M:AMWD.Modbus.Serial.Util.UnixIOException.#ctor(System.String)">
+            <summary>
+            Initializes a new instance of a <see cref="T:AMWD.Modbus.Serial.Util.UnixIOException"/> class.
+            </summary>
+            <param name="message">The error message.</param>
+        </member>
+        <member name="M:AMWD.Modbus.Serial.Util.UnixIOException.#ctor(System.Int32,System.String)">
+            <summary>
+            Initializes a new instance of a <see cref="T:AMWD.Modbus.Serial.Util.UnixIOException"/> class.
+            </summary>
+            <param name="error">The error number.</param>
+            <param name="message">The error message.</param>
+        </member>
+        <member name="M:AMWD.Modbus.Serial.Util.UnixIOException.#ctor(System.String,System.Exception)">
+            <summary>
+            Initializes a new instance of a <see cref="T:AMWD.Modbus.Serial.Util.UnixIOException"/> class.
+            </summary>
+            <param name="message">The error message.</param>
+            <param name="innerException">An inner exception.</param>
+        </member>
+        <member name="M:AMWD.Modbus.Serial.Util.UnixIOException.#ctor(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <summary>
+            Initializes a new instance of a <see cref="T:AMWD.Modbus.Serial.Util.UnixIOException"/> class.
+            </summary>
+            <param name="info">The serialization information.</param>
+            <param name="context">The stream context.</param>
+        </member>
+        <member name="P:AMWD.Modbus.Serial.Util.UnixIOException.NativeErrorCode">
+            <summary>
+            Gets the native error code set by the unix system.
+            </summary>
+        </member>
+        <member name="M:AMWD.Modbus.Serial.Util.UnixIOException.GetObjectData(System.Runtime.Serialization.SerializationInfo,System.Runtime.Serialization.StreamingContext)">
+            <inheritdoc/>
+        </member>
+        <member name="T:AMWD.Modbus.Serial.Util.UnsafeNativeMethods">
+            <summary>
+            Definitions of the unsafe system methods.
+            Found on https://stackoverflow.com/a/10388107
+            </summary>
+        </member>
+        <member name="F:AMWD.Modbus.Serial.Util.UnsafeNativeMethods.O_RDWR">
+            <summary>
+            A flag for <see cref="M:AMWD.Modbus.Serial.Util.UnsafeNativeMethods.Open(System.String,System.UInt32)"/>.
+            </summary>
+        </member>
+        <member name="F:AMWD.Modbus.Serial.Util.UnsafeNativeMethods.O_NOCTTY">
+            <summary>
+            A flag for <see cref="M:AMWD.Modbus.Serial.Util.UnsafeNativeMethods.Open(System.String,System.UInt32)"/>.
+            </summary>
+        </member>
+        <member name="F:AMWD.Modbus.Serial.Util.UnsafeNativeMethods.TIOCGRS485">
+            <summary>
+            A flag for <see cref="M:AMWD.Modbus.Serial.Util.UnsafeNativeMethods.IoCtl(AMWD.Modbus.Serial.Util.SafeUnixHandle,System.UInt32,AMWD.Modbus.Serial.Util.SerialRS485@)"/>.
+            </summary>
+        </member>
+        <member name="F:AMWD.Modbus.Serial.Util.UnsafeNativeMethods.TIOCSRS485">
+            <summary>
+            A flag for <see cref="M:AMWD.Modbus.Serial.Util.UnsafeNativeMethods.IoCtl(AMWD.Modbus.Serial.Util.SafeUnixHandle,System.UInt32,AMWD.Modbus.Serial.Util.SerialRS485@)"/>.
+            </summary>
+        </member>
+        <member name="M:AMWD.Modbus.Serial.Util.UnsafeNativeMethods.Open(System.String,System.UInt32)">
+            <summary>
+            Opens a handle to a defined path (serial port).
+            </summary>
+            <param name="path">The path to open the handle.</param>
+            <param name="flag">The flags for the handle.</param>
+            <returns></returns>
+        </member>
+        <member name="M:AMWD.Modbus.Serial.Util.UnsafeNativeMethods.IoCtl(AMWD.Modbus.Serial.Util.SafeUnixHandle,System.UInt32,AMWD.Modbus.Serial.Util.SerialRS485@)">
+            <summary>
+            Performs an ioctl request to the open handle.
+            </summary>
+            <param name="handle">The handle.</param>
+            <param name="request">The request.</param>
+            <param name="serialRs485">The data structure to read / write.</param>
+            <returns></returns>
+        </member>
+        <member name="M:AMWD.Modbus.Serial.Util.UnsafeNativeMethods.Close(System.IntPtr)">
+            <summary>
+            Closes an open handle.
+            </summary>
+            <param name="handle">The handle.</param>
+            <returns></returns>
+        </member>
+        <member name="M:AMWD.Modbus.Serial.Util.UnsafeNativeMethods.StrError(System.Int32)">
+            <summary>
+            Converts the given error number (errno) into a readable string.
+            </summary>
+            <param name="errno">The error number (errno).</param>
+            <returns></returns>
+        </member>
+    </members>
+</doc>
